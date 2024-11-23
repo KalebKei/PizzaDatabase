@@ -37,8 +37,9 @@ CREATE TABLE ORDERS (
 
 CREATE TABLE DISCOUNT (
     D_ID INTEGER FOREIGN KEY,
-    Amount_Off FLOAT,
-    Discount_Name TEXT,
+    Percent_Off FLOAT,
+    Dollar_Off FLOAT,
+    Discount_Type TEXT,
 );
 
 CREATE TABLE DISCOUNT_O (

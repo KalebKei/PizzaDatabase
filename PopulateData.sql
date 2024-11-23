@@ -372,3 +372,65 @@ VALUES
 3
 );
 
+INSERT INTO DISCOUNT (
+Percent_Off,
+Dollar_Off,
+Discount_Type
+)
+VALUES
+(
+0.15,
+NULL,
+'employee'
+);
+
+INSERT INTO DISCOUNT (
+Percent_Off,
+Dollar_Off,
+Discount_Type
+)
+VALUES
+(
+NULL,
+1,
+'Lunch Special Medium'
+);
+
+INSERT INTO DISCOUNT (
+Percent_Off,
+Dollar_Off,
+Discount_Type
+)
+VALUES
+(
+NULL,
+2,
+'Lunch Special Large'
+);
+
+INSERT INTO DISCOUNT (
+Percent_Off,
+Dollar_Off,
+Discount_Type
+)
+VALUES
+(
+NULL,
+1.5,
+'Specialty Pizza'
+);
+
+INSERT INTO DISCOUNT (
+Percent_Off,
+Dollar_Off,
+Discount_Type
+)
+VALUES
+(
+0.2,
+NULL,
+'Gameday special'
+);
+
+
+
