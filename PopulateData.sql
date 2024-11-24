@@ -729,6 +729,47 @@ VALUES
     3.68
 );
 
+INSERT INTO Pizza_Toppings ( -- Extra Cheese
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    1,
+    1,
+    x, -- TODO give toppings topping id's and link
+    "Extra"
+);
+INSERT INTO Pizza_Toppings ( -- Pepperoni
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    2,
+    1,
+    x, -- TODO give toppings topping id's and link
+    "Regular"
+);
+INSERT INTO Pizza_Toppings ( -- Sausage
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    3,
+    1,
+    x, -- TODO give toppings topping id's and link
+    "Regular"
+);
+
+
 INSERT INTO CUSTOMER (
     C_ID,
     Name,
@@ -754,19 +795,150 @@ VALUES
 );
 
 
-
-
 -- END ORDER 1 --
 
-
-INSERT INTO DELIVERY (
-    Cust_ID INTEGER FOREIGN KEY,
-    Address TEXT,
+-- START ORDER 2 --
+INSERT INTO ORDERS (
+    O_ID,
+    Cust_ID,
+    Pizza_ID,
+    Order_State,
+    C_Price as Price,
+    B_Price as Cost
+)
+VALUES
+(
+    2,
+    2,
+    2,
+    "Done",
+    13.5,
+    3.68
 );
 
-INSERT INTO TAKEOUT (
-    Cust_ID INTEGER FOREIGN KEY,
+-- YYYY-MM-DD HH:MI:SS (time example) --
+INSERT INTO PIZZA (
+    P_ID,
+    Bprice_ID,
+    Order_State,
+    Order_Date,
+    Crust_Type,
+    Pizza_Price,
+    Pizza_Discount,
+)
+INSERT
+(
+    2,
+    2,
+    "Done",
+    2024-03-03 12:05:00,
+    "Pan crust",
+    13.5,
+    3 -- Large lunch --
 );
 
+INSERT INTO BASE_PRICE (
+    BP_ID,
+    Price,
+    Size,
+    Crust,
+    Cost,
+)
+VALUES
+(
+    2, -- Same as PID --
+    13.5,
+    "Medium",
+    "Pan crust",
+    3.68
+);
 
+INSERT INTO Pizza_Toppings ( -- Feta Cheese
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    4,
+    2,
+    x, -- TODO give toppings topping id's and link
+    "Regular"
+);
+INSERT INTO Pizza_Toppings ( -- Black olives
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    5,
+    2,
+    x, -- TODO give toppings topping id's and link
+    "Regular"
+);
+INSERT INTO Pizza_Toppings ( -- Roma tomatos
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    5,
+    2,
+    x, -- TODO give toppings topping id's and link
+    "Regular"
+);
+INSERT INTO Pizza_Toppings ( -- Mushrooms
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    6,
+    2,
+    x, -- TODO give toppings topping id's and link
+    "Regular"
+);
+INSERT INTO Pizza_Toppings ( -- Banana peppers
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    7,
+    2,
+    x, -- TODO give toppings topping id's and link
+    "Regular"
+);
 
+INSERT INTO CUSTOMER (
+    C_ID,
+    Name,
+    Phone_Number,
+)
+VALUES
+(
+    2,
+    NULL,
+    NULL
+);
+
+INSERT INTO DINE_IN (
+    Cust_ID,
+    Table_Number,
+    Seat_Number,
+)
+VALUES
+(
+    2,
+    4,
+    "1" -- Why are you do this to us --
+);

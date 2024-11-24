@@ -7,7 +7,13 @@ CREATE TABLE TOPPINGS (
     Price FLOAT,
     Cost FLOAT,
     Inventory INTEGER,
-    AmountUsed FLOAT
+);
+
+CREATE TABLE Pizza_Toppings (
+    PizzaToppingID INT PRIMARY KEY,
+    PizzaID INT FOREIGN KEY,
+    ToppingID INT FOREIGN KEY,
+    AmountUsed VARCHAR
 );
 
 CREATE TABLE PIZZA (
@@ -77,7 +83,7 @@ CREATE TABLE TAKEOUT (
 
 
 
-
+-- TODO: Discounts
 
 
 
