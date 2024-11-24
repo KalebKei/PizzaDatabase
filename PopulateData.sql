@@ -1,3 +1,4 @@
+-- TOPPINGS --
 INSERT INTO TOPPINGS (
 Name,
 Price,
@@ -372,66 +373,79 @@ VALUES
 3
 );
 
-INSERT INTO DISCOUNT (
-Percent_Off,
-Dollar_Off,
-Discount_Type
+-- DISCOUNTS --
+INSERT INTO DISCOUNT_O (
+    Dis_ID,
+    Percent_Off,
+    Dollar_Off,
+    Discount_Type
 )
 VALUES
 (
-0.15,
-NULL,
-'employee'
+    1,
+    0.15,
+    NULL,
+    'employee'
 );
 
-INSERT INTO DISCOUNT (
-Percent_Off,
-Dollar_Off,
-Discount_Type
+INSERT INTO DISCOUNT_P (
+    Dis_ID,
+    Percent_Off,
+    Dollar_Off,
+    Discount_Type
 )
 VALUES
 (
-NULL,
-1,
-'Lunch Special Medium'
+    2,
+    NULL,
+    1,
+    'Lunch Special Medium'
 );
 
-INSERT INTO DISCOUNT (
-Percent_Off,
-Dollar_Off,
-Discount_Type
+INSERT INTO DISCOUNT_P (
+    Dis_ID
+    Percent_Off,
+    Dollar_Off,
+    Discount_Type
 )
 VALUES
 (
-NULL,
-2,
-'Lunch Special Large'
+    3,
+    NULL,
+    2,
+    'Lunch Special Large'
 );
 
-INSERT INTO DISCOUNT (
-Percent_Off,
-Dollar_Off,
-Discount_Type
+INSERT INTO DISCOUNT_P (
+    Dis_ID,
+    Percent_Off,
+    Dollar_Off,
+    Discount_Type
 )
 VALUES
 (
-NULL,
-1.5,
-'Specialty Pizza'
+    4,
+    NULL,
+    1.5,
+    'Specialty Pizza'
 );
 
-INSERT INTO DISCOUNT (
-Percent_Off,
-Dollar_Off,
-Discount_Type
+INSERT INTO DISCOUNT_O (
+    Dis_ID,
+    Percent_Off,
+    Dollar_Off,
+    Discount_Type
 )
 VALUES
 (
-0.2,
-NULL,
-'Gameday special'
+    5,
+    0.2,
+    NULL,
+    'Gameday special'
 );
 
+
+-- BASE PRICES --
 INSERT INTO BASE_PRICE (
 Size,
 Crust,
@@ -657,7 +671,102 @@ VALUES
 );
 
 
+-- ORDERS (Customer and type) --
 
+-- ORDER 1 --
+INSERT INTO ORDERS (
+    O_ID,
+    Cust_ID,
+    Pizza_ID,
+    Order_State,
+    C_Price as Price,
+    B_Price as Cost
+)
+VALUES
+(
+    1,
+    1, -- First customer!!!!! Yippie!
+    1,
+    "Done",
+    13.5,
+    3.68
+);
+
+-- YYYY-MM-DD HH:MI:SS (time example) --
+INSERT INTO PIZZA (
+    P_ID,
+    Bprice_ID,
+    Order_State,
+    Order_Date,
+    Crust_Type,
+    Pizza_Price,
+    Pizza_Discount,
+)
+INSERT
+(
+    1,
+    1,
+    "Done",
+    2024-03-05 12:03:00,
+    "Thin Crust",
+    13.5,
+    3 -- Large lunch --
+);
+
+INSERT INTO BASE_PRICE (
+    BP_ID,
+    Price,
+    Size,
+    Crust,
+    Cost,
+)
+VALUES
+(
+    1, -- Same as PID --
+    13.5,
+    "Large",
+    "Thin Crust",
+    3.68
+);
+
+INSERT INTO CUSTOMER (
+    C_ID,
+    Name,
+    Phone_Number,
+)
+VALUES
+(
+    1,
+    NULL,
+    NULL
+);
+
+INSERT INTO DINE_IN (
+    Cust_ID,
+    Table_Number,
+    Seat_Number,
+)
+VALUES
+(
+    1,
+    14,
+    "1,2,3" -- Why are you do this to us --
+);
+
+
+
+
+-- END ORDER 1 --
+
+
+INSERT INTO DELIVERY (
+    Cust_ID INTEGER FOREIGN KEY,
+    Address TEXT,
+);
+
+INSERT INTO TAKEOUT (
+    Cust_ID INTEGER FOREIGN KEY,
+);
 
 
 
