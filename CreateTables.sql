@@ -15,7 +15,6 @@ CREATE TABLE TOPPINGS (
 CREATE TABLE PIZZA (
     P_ID INTEGER PRIMARY KEY,
     Bprice_ID INTEGER,
-    P_Discount FLOAT,
     Order_State TEXT,
     Order_Date DATETIME,
     Crust_Type TEXT,
@@ -37,7 +36,7 @@ CREATE TABLE BASE_PRICE (
     Price FLOAT,
     Size TEXT,
     Crust TEXT,
-    Cost FLOAT,
+    Cost FLOAT
 );
 
 
@@ -77,7 +76,6 @@ CREATE TABLE DISCOUNT_P (
     Percent_Off FLOAT,
     Dollar_Off FLOAT,
     Discount_Type TEXT
-
 );
 
 CREATE TABLE ORDERS (
@@ -98,7 +96,7 @@ ADD FOREIGN KEY (Bprice_ID) REFERENCES BASE_PRICE(BP_ID);
 
 
 ALTER TABLE PIZZA
-ADD FOREIGN KEY (P_Discount) REFERENCES DISCOUNT_P(Dis_ID);
+ADD FOREIGN KEY (Pizza_Discount) REFERENCES DISCOUNT_P(Dis_ID);
 
 
 
