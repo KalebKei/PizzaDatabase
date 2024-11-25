@@ -679,8 +679,8 @@ INSERT INTO ORDERS (
     Cust_ID,
     Pizza_ID,
     Order_State,
-    C_Price as Price,
-    B_Price as Cost
+    C_Price,
+    B_Price
 )
 VALUES
 (
@@ -803,8 +803,8 @@ INSERT INTO ORDERS (
     Cust_ID,
     Pizza_ID,
     Order_State,
-    C_Price as Price,
-    B_Price as Cost
+    C_Price,
+    B_Price
 )
 VALUES
 (
@@ -951,8 +951,8 @@ INSERT INTO ORDERS (
     Cust_ID,
     Pizza_ID,
     Order_State,
-    C_Price as Price,
-    B_Price as Cost
+    C_Price,
+    B_Price
 )
 VALUES
 (
@@ -1077,8 +1077,8 @@ INSERT INTO ORDERS (
     Cust_ID,
     Pizza_ID,
     Order_State,
-    C_Price as Price,
-    B_Price as Cost
+    C_Price,
+    B_Price
 )
 VALUES
 (
@@ -1162,8 +1162,8 @@ INSERT INTO ORDERS (
     Cust_ID,
     Pizza_ID,
     Order_State,
-    C_Price as Price,
-    B_Price as Cost
+    C_Price,
+    B_Price
 )
 VALUES
 (
@@ -1232,8 +1232,8 @@ INSERT INTO ORDERS (
     Cust_ID,
     Pizza_ID,
     Order_State,
-    C_Price as Price,
-    B_Price as Cost
+    C_Price,
+    B_Price
 )
 VALUES
 (
@@ -1303,8 +1303,8 @@ INSERT INTO ORDERS (
     Cust_ID,
     Pizza_ID,
     Order_State,
-    C_Price as Price,
-    B_Price as Cost
+    C_Price,
+    B_Price
 )
 VALUES
 (
@@ -1374,8 +1374,8 @@ INSERT INTO ORDERS (
     Cust_ID,
     Pizza_ID,
     Order_State,
-    C_Price as Price,
-    B_Price as Cost
+    C_Price,
+    B_Price
 )
 VALUES
 (
@@ -1445,8 +1445,8 @@ INSERT INTO ORDERS (
     Cust_ID,
     Pizza_ID,
     Order_State,
-    C_Price as Price,
-    B_Price as Cost
+    C_Price,
+    B_Price
 )
 VALUES
 (
@@ -1539,8 +1539,8 @@ INSERT INTO ORDERS (
     Cust_ID,
     Pizza_ID,
     Order_State,
-    C_Price as Price,
-    B_Price as Cost
+    C_Price,
+    B_Price
 )
 VALUES
 (
@@ -1636,8 +1636,8 @@ INSERT INTO ORDERS (
     Cust_ID,
     Pizza_ID,
     Order_State,
-    C_Price as Price,
-    B_Price as Cost
+    C_Price,
+    B_Price
 )
 VALUES
 (
@@ -1732,8 +1732,8 @@ INSERT INTO ORDERS (
     Cust_ID,
     Pizza_ID,
     Order_State,
-    C_Price as Price,
-    B_Price as Cost
+    C_Price,
+    B_Price
 )
 VALUES
 (
@@ -1831,4 +1831,104 @@ VALUES
 (
     4,
     "115 Party Blvd, Athens OH 45701"
+);
+
+
+-- End Order(s) 4
+
+-- Begin Order 5
+
+INSERT INTO ORDERS (
+    O_ID,
+    Cust_ID,
+    Pizza_ID,
+    Order_State,
+    C_Price,
+    B_Price
+)
+VALUES
+(
+    12,
+    5,
+    12,
+    "Done",
+    16.85,
+    7.85
+);
+
+-- YYYY-MM-DD HH:MI:SS (time example) --
+INSERT INTO PIZZA (
+    P_ID,
+    Bprice_ID,
+    Order_State,
+    Order_Date,
+    Crust_Type,
+    Pizza_Price,
+    Pizza_Discount,
+)
+INSERT
+(
+    12,
+    6,
+    "Done",
+    2024-03-03 12:05:00,
+    "Pan crust",
+    16.85,
+    4 -- Specialty pizza special --
+);
+
+INSERT INTO BASE_PRICE (
+    BP_ID,
+    Price,
+    Size,
+    Crust,
+    Cost,
+)
+VALUES
+(
+    12, -- Same as PID --
+    16.85,
+    "X-Large",
+    "Original",
+    7.85
+);
+
+INSERT INTO Pizza_Toppings ( -- Four Cheese
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    25,
+    10,
+    x, -- TODO give toppings topping id's and link
+    "Regular"
+);
+INSERT INTO Pizza_Toppings ( -- Pineapple
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    26,
+    10,
+    x, -- TODO give toppings topping id's and link
+    "Extra"
+);
+INSERT INTO Pizza_Toppings ( -- Ham
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    27,
+    10,
+    x, -- TODO give toppings topping id's and link
+    "Extra"
 );

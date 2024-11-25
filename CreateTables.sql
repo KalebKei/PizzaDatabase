@@ -6,14 +6,7 @@ CREATE TABLE TOPPINGS (
     Name TEXT,
     Price FLOAT,
     Cost FLOAT,
-    Inventory INTEGER,
-);
-
-CREATE TABLE Pizza_Toppings (
-    PizzaToppingID INT PRIMARY KEY,
-    PizzaID INT FOREIGN KEY,
-    ToppingID INT FOREIGN KEY,
-    AmountUsed VARCHAR
+    Inventory INTEGER
 );
 
 CREATE TABLE PIZZA (
@@ -24,6 +17,15 @@ CREATE TABLE PIZZA (
     Crust_Type TEXT,
     Pizza_Price FLOAT,
     Pizza_Discount INTEGER
+);
+
+CREATE TABLE Pizza_Toppings (
+    PizzaToppingID INT PRIMARY KEY,
+    PizzaID INT,
+    ToppingID INT,
+    FOREIGN KEY (PizzaID) REFERENCES PIZZA(P_ID),
+    FOREIGN KEY (ToppingID) REFERENCES TOPPINGS(T_ID),
+    AmountUsed VARCHAR(256)
 );
 
 CREATE TABLE BASE_PRICE (
