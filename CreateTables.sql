@@ -38,7 +38,6 @@ CREATE TABLE BASE_PRICE (
     Size TEXT,
     Crust TEXT,
     Cost FLOAT,
-    FOREIGN KEY (BP_ID) REFERENCES PIZZA(P_ID)
 );
 
 
