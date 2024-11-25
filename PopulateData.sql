@@ -437,7 +437,7 @@ VALUES
 );
 
 INSERT INTO DISCOUNT_P (
-    Dis_ID
+    Dis_ID,
     Percent_Off,
     Dollar_Off,
     Discount_Type
@@ -481,6 +481,7 @@ VALUES
 
 -- BASE PRICES --
 INSERT INTO BASE_PRICE (
+BP_ID,
 Size,
 Crust,
 Price,
@@ -488,6 +489,7 @@ Cost
 )
 VALUES
 (
+1,
 'small',
 'Thin',
 3,
@@ -495,6 +497,7 @@ VALUES
 );
 
 INSERT INTO BASE_PRICE (
+BP_ID,
 Size,
 Crust,
 Price,
@@ -502,6 +505,7 @@ Cost
 )
 VALUES
 (
+2,
 'small',
 'Original',
 3,
@@ -509,6 +513,7 @@ VALUES
 );
 
 INSERT INTO BASE_PRICE (
+BP_ID,
 Size,
 Crust,
 Price,
@@ -516,6 +521,7 @@ Cost
 )
 VALUES
 (
+3,
 'small',
 'Pan',
 3.5,
@@ -523,6 +529,7 @@ VALUES
 );
 
 INSERT INTO BASE_PRICE (
+BP_ID,
 Size,
 Crust,
 Price,
@@ -530,6 +537,7 @@ Cost
 )
 VALUES
 (
+4,
 'small',
 'Gluten-Free',
 4,
@@ -537,6 +545,7 @@ VALUES
 );
 
 INSERT INTO BASE_PRICE (
+BP_ID,
 Size,
 Crust,
 Price,
@@ -544,6 +553,7 @@ Cost
 )
 VALUES
 (
+5,
 'medium',
 'Thin',
 5,
@@ -551,6 +561,7 @@ VALUES
 );
 
 INSERT INTO BASE_PRICE (
+BP_ID,
 Size,
 Crust,
 Price,
@@ -558,6 +569,7 @@ Cost
 )
 VALUES
 (
+6,
 'medium',
 'Original',
 5,
@@ -565,6 +577,7 @@ VALUES
 );
 
 INSERT INTO BASE_PRICE (
+BP_ID,
 Size,
 Crust,
 Price,
@@ -572,6 +585,7 @@ Cost
 )
 VALUES
 (
+7,
 'medium',
 'Pan',
 6,
@@ -579,6 +593,7 @@ VALUES
 );
 
 INSERT INTO BASE_PRICE (
+BP_ID,
 Size,
 Crust,
 Price,
@@ -586,6 +601,7 @@ Cost
 )
 VALUES
 (
+8,
 'medium',
 'Gluten-Free',
 6.25,
@@ -593,6 +609,7 @@ VALUES
 );
 
 INSERT INTO BASE_PRICE (
+BP_ID,
 Size,
 Crust,
 Price,
@@ -600,6 +617,7 @@ Cost
 )
 VALUES
 (
+9,
 'Large',
 'Thin',
 8,
@@ -607,6 +625,7 @@ VALUES
 );
 
 INSERT INTO BASE_PRICE (
+BP_ID,
 Size,
 Crust,
 Price,
@@ -614,6 +633,7 @@ Cost
 )
 VALUES
 (
+10,
 'Large',
 'Original',
 8,
@@ -621,6 +641,7 @@ VALUES
 );
 
 INSERT INTO BASE_PRICE (
+BP_ID,
 Size,
 Crust,
 Price,
@@ -628,6 +649,7 @@ Cost
 )
 VALUES
 (
+11,
 'Large',
 'Pan',
 9,
@@ -635,6 +657,7 @@ VALUES
 );
 
 INSERT INTO BASE_PRICE (
+BP_ID,
 Size,
 Crust,
 Price,
@@ -642,6 +665,7 @@ Cost
 )
 VALUES
 (
+12,
 'Large',
 'Gluten-Free',
 9.5,
@@ -649,6 +673,7 @@ VALUES
 );
 
 INSERT INTO BASE_PRICE (
+BP_ID,
 Size,
 Crust,
 Price,
@@ -656,6 +681,7 @@ Cost
 )
 VALUES
 (
+13,
 'X-Large',
 'Thin',
 10,
@@ -663,6 +689,7 @@ VALUES
 );
 
 INSERT INTO BASE_PRICE (
+BP_ID,
 Size,
 Crust,
 Price,
@@ -670,6 +697,7 @@ Cost
 )
 VALUES
 (
+14,
 'X-Large',
 'Original',
 10,
@@ -677,6 +705,7 @@ VALUES
 );
 
 INSERT INTO BASE_PRICE (
+BP_ID,
 Size,
 Crust,
 Price,
@@ -684,6 +713,7 @@ Cost
 )
 VALUES
 (
+15,
 'X-Large',
 'Pan',
 11.5,
@@ -691,6 +721,7 @@ VALUES
 );
 
 INSERT INTO BASE_PRICE (
+BP_ID,
 Size,
 Crust,
 Price,
@@ -698,6 +729,7 @@ Cost
 )
 VALUES
 (
+16,
 'X-Large',
 'Gluten-Free',
 12.5,
@@ -705,7 +737,6 @@ VALUES
 );
 
 
--- ORDERS (Customer and type) --
 
 -- ORDER 1 --
 INSERT INTO ORDERS (
