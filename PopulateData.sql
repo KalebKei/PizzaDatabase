@@ -1114,22 +1114,25 @@ VALUES
 -- crust pizzas with regular cheese and pepperoni (Price: 10.75, Cost:3.30 each). Andrew’s phone number
 -- is 740-254-5861
 
-INSERT INTO ORDERS (
-    O_ID,
-    Cust_ID,
-    Pizza_ID,
-    Order_State,
-    C_Price,
-    B_Price
+
+INSERT INTO CUSTOMER (
+    C_ID,
+    Name,
+    Phone_Number
 )
 VALUES
 (
     4,
-    4,
-    4,
-    "Done",
-    10.75,
-    3.30
+    "Andrew Wilkes-Krier",
+    "740-254-5861"
+);
+
+INSERT INTO TAKEOUT (
+    Cust_ID
+)
+VALUES
+(
+    4
 );
 
 -- YYYY-MM-DD HH:MI:SS (time example) --
@@ -1140,33 +1143,28 @@ INSERT INTO PIZZA (
     Order_Date,
     Crust_Type,
     Pizza_Price,
-    Pizza_Discount,
+    Pizza_Discount
 )
-INSERT
+VALUES
 (
     4,
     4,
     "Done",
-    2024-03-03 21:30:00,
+    "2024-03-03 21:30:00",
     "Original",
     10.75,
     NULL
 );
 
-INSERT INTO BASE_PRICE (
-    BP_ID,
-    Price,
-    Size,
-    Crust,
-    Cost,
+INSERT INTO BP_ORDER (
+    BPO_ID,
+    BP_ID
 )
 VALUES
 (
-    4, -- Same as PID --
-    10.75
-    "Small",
-    "Original",
-    3.30
+    4,
+    10
+    
 );
 
 INSERT INTO Pizza_Toppings ( -- Regular Cheese
@@ -1177,9 +1175,9 @@ INSERT INTO Pizza_Toppings ( -- Regular Cheese
 )
 VALUES
 (
-    10,
+    13,
     4,
-    x, -- TODO give toppings topping id's and link
+    13, -- TODO give toppings topping id's and link
     "Regular"
 );
 
@@ -1191,13 +1189,11 @@ INSERT INTO Pizza_Toppings ( -- Pepproni
 )
 VALUES
 (
-    11,
+    14,
     4,
-    x, -- TODO give toppings topping id's and link
+    1, -- TODO give toppings topping id's and link
     "Regular"
 );
-
--- End pizza 1
 
 INSERT INTO ORDERS (
     O_ID,
@@ -1209,13 +1205,16 @@ INSERT INTO ORDERS (
 )
 VALUES
 (
-    5,
     4,
-    5,
+    4,
+    4,
     "Done",
     10.75,
     3.30
 );
+
+-- End pizza 1
+
 
 -- YYYY-MM-DD HH:MI:SS (time example) --
 INSERT INTO PIZZA (
@@ -1225,17 +1224,28 @@ INSERT INTO PIZZA (
     Order_Date,
     Crust_Type,
     Pizza_Price,
-    Pizza_Discount,
+    Pizza_Discount
 )
-INSERT
+VALUES
 (
     5,
     4,
     "Done",
-    2024-03-03 21:30:00,
+    "2024-03-03 21:30:00",
     "Original",
     10.75,
     NULL
+);
+
+INSERT INTO BP_ORDER (
+    BPO_ID,
+    BP_ID
+)
+VALUES
+(
+    5,
+    10
+    
 );
 
 INSERT INTO Pizza_Toppings ( -- Regular Cheese
@@ -1248,77 +1258,7 @@ VALUES
 (
     12,
     5,
-    x, -- TODO give toppings topping id's and link
-    "Regular"
-);
-
-INSERT INTO Pizza_Toppings ( -- Pepproni
-    PizzaToppingID,
-    PizzaID,
-    ToppingID,
-    AmountUsed
-)
-VALUES
-(
-    13,
-    5,
-    x, -- TODO give toppings topping id's and link
-    "Regular"
-);
-
-
--- End pizza 2
-
-INSERT INTO ORDERS (
-    O_ID,
-    Cust_ID,
-    Pizza_ID,
-    Order_State,
-    C_Price,
-    B_Price
-)
-VALUES
-(
-    6,
-    4,
-    6,
-    "Done",
-    10.75,
-    3.30
-);
-
--- YYYY-MM-DD HH:MI:SS (time example) --
-INSERT INTO PIZZA (
-    P_ID,
-    Bprice_ID,
-    Order_State,
-    Order_Date,
-    Crust_Type,
-    Pizza_Price,
-    Pizza_Discount,
-)
-INSERT
-(
-    6,
-    4,
-    "Done",
-    2024-03-03 21:30:00,
-    "Original",
-    10.75,
-    NULL
-);
-
-INSERT INTO Pizza_Toppings ( -- Regular Cheese
-    PizzaToppingID,
-    PizzaID,
-    ToppingID,
-    AmountUsed
-)
-VALUES
-(
-    14,
-    6,
-    x, -- TODO give toppings topping id's and link
+    13, -- TODO give toppings topping id's and link
     "Regular"
 );
 
@@ -1331,14 +1271,10 @@ INSERT INTO Pizza_Toppings ( -- Pepproni
 VALUES
 (
     15,
-    6,
-    x, -- TODO give toppings topping id's and link
+    5,
+    1, -- TODO give toppings topping id's and link
     "Regular"
 );
-
-
--- End pizza 3
-
 
 INSERT INTO ORDERS (
     O_ID,
@@ -1350,13 +1286,17 @@ INSERT INTO ORDERS (
 )
 VALUES
 (
-    7,
+    5,
     4,
-    7,
+    5,
     "Done",
     10.75,
     3.30
 );
+
+
+-- End pizza 2
+
 
 -- YYYY-MM-DD HH:MI:SS (time example) --
 INSERT INTO PIZZA (
@@ -1366,17 +1306,27 @@ INSERT INTO PIZZA (
     Order_Date,
     Crust_Type,
     Pizza_Price,
-    Pizza_Discount,
+    Pizza_Discount
 )
-INSERT
+VALUES
 (
-    7,
+    6,
     4,
     "Done",
-    2024-03-03 21:30:00,
+    "2024-03-03 21:30:00",
     "Original",
     10.75,
     NULL
+);
+
+INSERT INTO BP_ORDER (
+    BPO_ID,
+    BP_ID
+)
+VALUES
+(
+    6,
+    10
 );
 
 INSERT INTO Pizza_Toppings ( -- Regular Cheese
@@ -1388,8 +1338,8 @@ INSERT INTO Pizza_Toppings ( -- Regular Cheese
 VALUES
 (
     16,
-    7,
-    x, -- TODO give toppings topping id's and link
+    6,
+    13, -- TODO give toppings topping id's and link
     "Regular"
 );
 
@@ -1402,14 +1352,10 @@ INSERT INTO Pizza_Toppings ( -- Pepproni
 VALUES
 (
     17,
-    7,
-    x, -- TODO give toppings topping id's and link
+    6,
+    1, -- TODO give toppings topping id's and link
     "Regular"
 );
-
-
--- End pizza 4
-
 
 INSERT INTO ORDERS (
     O_ID,
@@ -1421,13 +1367,16 @@ INSERT INTO ORDERS (
 )
 VALUES
 (
-    8,
+    6,
     4,
-    8,
+    6,
     "Done",
     10.75,
     3.30
 );
+
+
+-- End pizza 3
 
 -- YYYY-MM-DD HH:MI:SS (time example) --
 INSERT INTO PIZZA (
@@ -1437,17 +1386,28 @@ INSERT INTO PIZZA (
     Order_Date,
     Crust_Type,
     Pizza_Price,
-    Pizza_Discount,
+    Pizza_Discount
 )
-INSERT
+VALUES
 (
-    8,
+    7,
     4,
     "Done",
-    2024-03-03 21:30:00,
+    "2024-03-03 21:30:00",
     "Original",
     10.75,
     NULL
+);
+
+INSERT INTO BP_ORDER (
+    BPO_ID,
+    BP_ID
+)
+VALUES
+(
+    7,
+    10
+    
 );
 
 INSERT INTO Pizza_Toppings ( -- Regular Cheese
@@ -1459,8 +1419,8 @@ INSERT INTO Pizza_Toppings ( -- Regular Cheese
 VALUES
 (
     18,
-    8,
-    x, -- TODO give toppings topping id's and link
+    7,
+    13, -- TODO give toppings topping id's and link
     "Regular"
 );
 
@@ -1473,14 +1433,171 @@ INSERT INTO Pizza_Toppings ( -- Pepproni
 VALUES
 (
     19,
-    8,
-    x, -- TODO give toppings topping id's and link
+    7,
+    1, -- TODO give toppings topping id's and link
     "Regular"
+);
+
+INSERT INTO ORDERS (
+    O_ID,
+    Cust_ID,
+    Pizza_ID,
+    Order_State,
+    C_Price,
+    B_Price
+)
+VALUES
+(
+    7,
+    4,
+    7,
+    "Done",
+    10.75,
+    3.30
+);
+
+
+-- End pizza 4
+
+-- YYYY-MM-DD HH:MI:SS (time example) --
+INSERT INTO PIZZA (
+    P_ID,
+    Bprice_ID,
+    Order_State,
+    Order_Date,
+    Crust_Type,
+    Pizza_Price,
+    Pizza_Discount
+)
+VALUES
+(
+    8,
+    4,
+    "Done",
+    "2024-03-03 21:30:00",
+    "Original",
+    10.75,
+    NULL
+);
+
+INSERT INTO BP_ORDER (
+    BPO_ID,
+    BP_ID
+)
+VALUES
+(
+    8,
+    10
+);
+
+INSERT INTO Pizza_Toppings ( -- Regular Cheese
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    20,
+    8,
+    13, -- TODO give toppings topping id's and link
+    "Regular"
+);
+
+INSERT INTO Pizza_Toppings ( -- Pepproni
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    21,
+    8,
+    1, -- TODO give toppings topping id's and link
+    "Regular"
+);
+
+INSERT INTO ORDERS (
+    O_ID,
+    Cust_ID,
+    Pizza_ID,
+    Order_State,
+    C_Price,
+    B_Price
+)
+VALUES
+(
+    8,
+    4,
+    8,
+    "Done",
+    10.75,
+    3.30
 );
 
 
 -- End pizza 5
 
+-- YYYY-MM-DD HH:MI:SS (time example) --
+INSERT INTO PIZZA (
+    P_ID,
+    Bprice_ID,
+    Order_State,
+    Order_Date,
+    Crust_Type,
+    Pizza_Price,
+    Pizza_Discount
+)
+VALUES
+(
+    9,
+    4,
+    "Done",
+    "2024-03-03 21:30:00",
+    "Original",
+    10.75,
+    NULL
+);
+
+INSERT INTO BP_ORDER (
+    BPO_ID,
+    BP_ID
+)
+VALUES
+(
+    9,
+    10
+);
+
+
+INSERT INTO Pizza_Toppings ( -- Regular Cheese
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    22,
+    9,
+    13, -- TODO give toppings topping id's and link
+    "Regular"
+);
+
+INSERT INTO Pizza_Toppings ( -- Pepproni
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    23,
+    9,
+    1, -- TODO give toppings topping id's and link
+    "Regular"
+);
 
 INSERT INTO ORDERS (
     O_ID,
@@ -1500,99 +1617,23 @@ VALUES
     3.30
 );
 
--- YYYY-MM-DD HH:MI:SS (time example) --
-INSERT INTO PIZZA (
-    P_ID,
-    Bprice_ID,
-    Order_State,
-    Order_Date,
-    Crust_Type,
-    Pizza_Price,
-    Pizza_Discount,
-)
-INSERT
-(
-    9,
-    4,
-    "Done",
-    2024-03-03 21:30:00,
-    "Original",
-    10.75,
-    NULL
-);
-
-
-INSERT INTO Pizza_Toppings ( -- Regular Cheese
-    PizzaToppingID,
-    PizzaID,
-    ToppingID,
-    AmountUsed
-)
-VALUES
-(
-    20,
-    9,
-    x, -- TODO give toppings topping id's and link
-    "Regular"
-);
-
-INSERT INTO Pizza_Toppings ( -- Pepproni
-    PizzaToppingID,
-    PizzaID,
-    ToppingID,
-    AmountUsed
-)
-VALUES
-(
-    21,
-    9,
-    x, -- TODO give toppings topping id's and link
-    "Regular"
-);
-
 
 -- End all pizzas (wtf)
-INSERT INTO CUSTOMER (
-    C_ID,
-    Name,
-    Phone_Number,
-)
-VALUES
-(
-    4,
-    Andrew Wilkes-Krier,
-    "740-254-5861"
-);
-
-INSERT INTO TAKEOUT (
-    Cust_ID,
-)
-VALUES
-(
-    4
-);
-
 -- End Order(s) 3
 
 
 -- Begin Order(s) 4
-INSERT INTO ORDERS (
-    O_ID,
+
+INSERT INTO DELIVERY (
     Cust_ID,
-    Pizza_ID,
-    Order_State,
-    C_Price,
-    B_Price
+    Address
 )
 VALUES
 (
-    9,
     4,
-    9,
-    "Done",
-    14.5,
-    5.59
+    "115 Party Blvd, Athens OH 45701"
 );
+
 
 -- YYYY-MM-DD HH:MI:SS (time example) --
 INSERT INTO PIZZA (
@@ -1669,6 +1710,24 @@ VALUES
     9,
     x, -- TODO give toppings topping id's and link
     "Regular"
+);
+
+INSERT INTO ORDERS (
+    O_ID,
+    Cust_ID,
+    Pizza_ID,
+    Order_State,
+    C_Price,
+    B_Price
+)
+VALUES
+(
+    9,
+    4,
+    9,
+    "Done",
+    14.5,
+    5.59
 );
 
 -- End pizza 1
@@ -1865,15 +1924,6 @@ VALUES
 );
 -- End pizzas
 
-INSERT INTO DELIVERY (
-    Cust_ID,
-    Address,
-)
-VALUES
-(
-    4,
-    "115 Party Blvd, Athens OH 45701"
-);
 
 
 -- End Order(s) 4
