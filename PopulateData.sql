@@ -765,14 +765,14 @@ INSERT INTO PIZZA (
     Order_Date,
     Crust_Type,
     Pizza_Price,
-    Pizza_Discount,
+    Pizza_Discount
 )
-INSERT
+VALUES
 (
     1,
     9,
     "Done",
-    2024-03-05 12:03:00,
+    "2024-03-05 12:03:00",
     "Thin Crust",
     13.5,
     3 -- Large lunch --
@@ -2093,7 +2093,7 @@ INSERT INTO Pizza_Toppings ( -- Four cheese blend
 VALUES
 (
     37,
-    12,
+    13,
     x, -- TODO give toppings topping id's and link
     "Regular"
 );
@@ -2106,7 +2106,7 @@ INSERT INTO Pizza_Toppings ( -- Green Pepper
 VALUES
 (
     38,
-    12,
+    13,
     x, -- TODO give toppings topping id's and link
     "Regular"
 );
@@ -2119,7 +2119,7 @@ INSERT INTO Pizza_Toppings ( -- Chicken
 VALUES
 (
     39,
-    12,
+    13,
     x, -- TODO give toppings topping id's and link
     "Regular"
 );
@@ -2132,7 +2132,7 @@ INSERT INTO Pizza_Toppings ( -- Onion
 VALUES
 (
     40,
-    12,
+    13,
     x, -- TODO give toppings topping id's and link
     "Regular"
 );
@@ -2145,7 +2145,7 @@ INSERT INTO Pizza_Toppings ( -- Mushroom
 VALUES
 (
     41,
-    12,
+    13,
     x, -- TODO give toppings topping id's and link
     "Regular"
 );
@@ -2172,3 +2172,153 @@ VALUES
     "6745 Wessex St Athens OH 45701"
 );
 
+
+-- End order 6
+
+-- Start order 7
+
+INSERT INTO ORDERS (
+    O_ID,
+    Cust_ID,
+    Pizza_ID,
+    Order_State,
+    C_Price,
+    B_Price,
+    Order_Discount
+)
+VALUES
+(
+    14,
+    7,
+    14,
+    "Done",
+    12.00,
+    3.75,
+    1
+);
+
+-- YYYY-MM-DD HH:MI:SS (time example) --
+INSERT INTO PIZZA (
+    P_ID,
+    Bprice_ID,
+    Order_State,
+    Order_Date,
+    Crust_Type,
+    Pizza_Price,
+    Pizza_Discount
+)
+INSERT
+(
+    14,
+    x, -- Caden fix me!!!!!!!!!!!!!!!!!!!!!!!!!!
+    "Done",
+    2024-03-03 12:05:00,
+    "Thin crust",
+    12.00,
+    NULL
+);
+
+INSERT INTO Pizza_Toppings ( -- Four cheese blend
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    42,
+    14,
+    x, -- TODO give toppings topping id's and link
+    "Extra"
+);
+
+INSERT INTO ORDERS (
+    O_ID,
+    Cust_ID,
+    Pizza_ID,
+    Order_State,
+    C_Price,
+    B_Price,
+    Order_Discount
+)
+VALUES
+(
+    15,
+    7,
+    15,
+    "Done",
+    12.00,
+    3.75,
+    1
+);
+
+-- YYYY-MM-DD HH:MI:SS (time example) --
+INSERT INTO PIZZA (
+    P_ID,
+    Bprice_ID,
+    Order_State,
+    Order_Date,
+    Crust_Type,
+    Pizza_Price,
+    Pizza_Discount,
+)
+INSERT
+(
+    15,
+    x, -- Caden fix me!!!!!!!!!!!!!!!!!!!!!!!!!!
+    "Done",
+    2024-03-03 12:05:00,
+    "Thin crust",
+    12.00,
+    NULL
+);
+
+INSERT INTO Pizza_Toppings ( -- Regular Cheese
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    43,
+    15,
+    x, -- TODO give toppings topping id's and link
+    "Regular"
+);
+
+INSERT INTO Pizza_Toppings ( -- Pepproni
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    44,
+    15,
+    x, -- TODO give toppings topping id's and link
+    "Extra"
+);
+
+INSERT INTO CUSTOMER (
+    C_ID,
+    Name,
+    Phone_Number,
+)
+VALUES
+(
+    7,
+    "Milo Auckerman",
+    "740-878-5679"
+);
+
+INSERT INTO DELIVERY (
+    Cust_ID,
+    Address,
+)
+VALUES
+(
+    7,
+    "8879 Suburban Home, Athens OH 45701"
+);
