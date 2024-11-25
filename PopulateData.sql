@@ -770,7 +770,7 @@ INSERT INTO PIZZA (
 INSERT
 (
     1,
-    1,
+    9,
     "Done",
     2024-03-05 12:03:00,
     "Thin Crust",
@@ -787,7 +787,7 @@ INSERT INTO BASE_PRICE (
 )
 VALUES
 (
-    1, -- Same as PID --
+    9, -- Same as Bprice_ID --
     13.5,
     "Large",
     "Thin Crust",
@@ -804,7 +804,7 @@ VALUES
 (
     1,
     1,
-    x, -- TODO give toppings topping id's and link
+    13, -- TODO give toppings topping id's and link
     "Extra"
 );
 INSERT INTO Pizza_Toppings ( -- Pepperoni
@@ -817,7 +817,7 @@ VALUES
 (
     2,
     1,
-    x, -- TODO give toppings topping id's and link
+    1, -- TODO give toppings topping id's and link
     "Regular"
 );
 INSERT INTO Pizza_Toppings ( -- Sausage
@@ -830,7 +830,7 @@ VALUES
 (
     3,
     1,
-    x, -- TODO give toppings topping id's and link
+    2, -- TODO give toppings topping id's and link
     "Regular"
 );
 
@@ -911,7 +911,7 @@ INSERT INTO BASE_PRICE (
 )
 VALUES
 (
-    2, -- Same as PID --
+    7, -- Same as PID --
     13.5,
     "Medium",
     "Pan crust",
@@ -928,7 +928,7 @@ VALUES
 (
     4,
     2,
-    x, -- TODO give toppings topping id's and link
+    15, -- TODO give toppings topping id's and link
     "Regular"
 );
 INSERT INTO Pizza_Toppings ( -- Black olives
@@ -941,7 +941,7 @@ VALUES
 (
     5,
     2,
-    x, -- TODO give toppings topping id's and link
+    9, -- TODO give toppings topping id's and link
     "Regular"
 );
 INSERT INTO Pizza_Toppings ( -- Roma tomatos
@@ -954,7 +954,7 @@ VALUES
 (
     5,
     2,
-    x, -- TODO give toppings topping id's and link
+    7, -- TODO give toppings topping id's and link
     "Regular"
 );
 INSERT INTO Pizza_Toppings ( -- Mushrooms
@@ -967,7 +967,7 @@ VALUES
 (
     6,
     2,
-    x, -- TODO give toppings topping id's and link
+    8, -- TODO give toppings topping id's and link
     "Regular"
 );
 INSERT INTO Pizza_Toppings ( -- Banana peppers
@@ -980,7 +980,7 @@ VALUES
 (
     7,
     2,
-    x, -- TODO give toppings topping id's and link
+    11, -- TODO give toppings topping id's and link
     "Regular"
 );
 
