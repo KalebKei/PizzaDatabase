@@ -1917,7 +1917,7 @@ VALUES
     5,
     12,
     "Done",
-    16.85,
+    16.85
     7.85
 );
 
@@ -1940,22 +1940,6 @@ INSERT
     "Pan crust",
     16.85,
     4 -- Specialty pizza special --
-);
-
-INSERT INTO BASE_PRICE (
-    BP_ID,
-    Price,
-    Size,
-    Crust,
-    Cost,
-)
-VALUES
-(
-    12, -- Same as PID --
-    16.85,
-    "X-Large",
-    "Gluten Free",
-    7.85
 );
 
 INSERT INTO Pizza_Toppings ( -- Goat Cheese
@@ -2056,3 +2040,135 @@ VALUES
 (
     5
 );
+
+-- End Order 5
+
+-- Begin Order 6
+
+INSERT INTO ORDERS (
+    O_ID,
+    Cust_ID,
+    Pizza_ID,
+    Order_State,
+    C_Price,
+    B_Price
+)
+VALUES
+(
+    13,
+    6,
+    13,
+    "Done",
+    13.25,
+    7.85
+);
+
+-- YYYY-MM-DD HH:MI:SS (time example) --
+INSERT INTO PIZZA (
+    P_ID,
+    Bprice_ID,
+    Order_State,
+    Order_Date,
+    Crust_Type,
+    Pizza_Price,
+    Pizza_Discount,
+)
+INSERT
+(
+    13,
+    x, -- Caden fix me!!!!!!!!!!!!!!!!!!!!!!!!!!
+    "Done",
+    2024-03-03 12:05:00,
+    "Thin crust",
+    13.25,
+    NULL
+);
+
+INSERT INTO Pizza_Toppings ( -- Four cheese blend
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    37,
+    12,
+    x, -- TODO give toppings topping id's and link
+    "Regular"
+);
+INSERT INTO Pizza_Toppings ( -- Green Pepper
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    38,
+    12,
+    x, -- TODO give toppings topping id's and link
+    "Regular"
+);
+INSERT INTO Pizza_Toppings ( -- Chicken
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    39,
+    12,
+    x, -- TODO give toppings topping id's and link
+    "Regular"
+);
+INSERT INTO Pizza_Toppings ( -- Onion
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    40,
+    12,
+    x, -- TODO give toppings topping id's and link
+    "Regular"
+);
+INSERT INTO Pizza_Toppings ( -- Mushroom
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    41,
+    12,
+    x, -- TODO give toppings topping id's and link
+    "Regular"
+);
+
+INSERT INTO CUSTOMER (
+    C_ID,
+    Name,
+    Phone_Number,
+)
+VALUES
+(
+    6,
+    "Frank Turner",
+    "740-232-8944"
+);
+
+INSERT INTO DELIVERY (
+    Cust_ID,
+    Address,
+)
+VALUES
+(
+    6,
+    "6745 Wessex St Athens OH 45701"
+);
+
