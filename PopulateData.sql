@@ -1,16 +1,18 @@
 -- TOPPINGS --
 INSERT INTO TOPPINGS (
+T_ID,
 Name,
 Price,
 Cost per unit,
 Inventory,
-small
+small,
 medium,
 large,
 x-large
 )
 VALUES
 (
+1,
 'Pepperoni',
 1.25,
 0.2,
@@ -22,17 +24,19 @@ VALUES
 );
 
 INSERT INTO TOPPINGS (
+T_ID,
 Name,
 Price,
 Cost per unit,
 Inventory,
-small
+small,
 medium,
 large,
 x-large
 )
 VALUES
 (
+2,
 'Sausage',
 1.25,
 0.15,
@@ -44,17 +48,19 @@ VALUES
 );
 
 INSERT INTO TOPPINGS (
+T_ID,
 Name,
 Price,
 Cost per unit,
 Inventory,
-small
+small,
 medium,
 large,
 x-large
 )
 VALUES
 (
+3,
 'Ham',
 1.5,
 0.15,
@@ -66,17 +72,19 @@ VALUES
 );
 
 INSERT INTO TOPPINGS (
+T_ID,
 Name,
 Price,
 Cost per unit,
 Inventory,
-small
+small,
 medium,
 large,
 x-large
 )
 VALUES
 (
+4,
 'Chicken',
 1.75,
 0.25,
@@ -88,17 +96,19 @@ VALUES
 );
 
 INSERT INTO TOPPINGS (
+T_ID,
 Name,
 Price,
 Cost per unit,
 Inventory,
-small
+small,
 medium,
 large,
 x-large
 )
 VALUES
 (
+5,
 'Green Pepper',
 0.5,
 0.02,
@@ -110,6 +120,7 @@ VALUES
 );
 
 INSERT INTO TOPPINGS (
+T_ID,
 Name,
 Price,
 Cost per unit,
@@ -121,6 +132,7 @@ x-large
 )
 VALUES
 (
+6,
 'Onion',
 0.5,
 0.02,
@@ -132,6 +144,7 @@ VALUES
 );
 
 INSERT INTO TOPPINGS (
+T_ID,
 Name,
 Price,
 Cost per unit,
@@ -143,6 +156,7 @@ x-large
 )
 VALUES
 (
+7,
 'Roma tomato',
 0.75,
 0.03,
@@ -154,6 +168,7 @@ VALUES
 );
 
 INSERT INTO TOPPINGS (
+T_ID,
 Name,
 Price,
 Cost per unit,
@@ -165,6 +180,7 @@ x-large
 )
 VALUES
 (
+8,
 'Mushrooms',
 0.75,
 0.1,
@@ -176,6 +192,7 @@ VALUES
 );
 
 INSERT INTO TOPPINGS (
+T_ID,
 Name,
 Price,
 Cost per unit,
@@ -187,6 +204,7 @@ x-large
 )
 VALUES
 (
+9,
 'Black Olives',
 0.6,
 0.1,
@@ -198,6 +216,7 @@ VALUES
 );
 
 INSERT INTO TOPPINGS (
+T_ID,
 Name,
 Price,
 Cost per unit,
@@ -209,6 +228,7 @@ x-large
 )
 VALUES
 (
+10,
 'Pineapple',
 1,
 0.25,
@@ -220,6 +240,7 @@ VALUES
 );
 
 INSERT INTO TOPPINGS (
+T_ID,
 Name,
 Price,
 Cost per unit,
@@ -231,6 +252,7 @@ x-large
 )
 VALUES
 (
+11,
 'Jalapenos',
 0.5,
 0.05,
@@ -242,6 +264,7 @@ VALUES
 );
 
 INSERT INTO TOPPINGS (
+T_ID,
 Name,
 Price,
 Cost per unit,
@@ -253,6 +276,7 @@ x-large
 )
 VALUES
 (
+12,
 'Banana Peppers',
 0.5,
 0.05,
@@ -264,6 +288,7 @@ VALUES
 );
 
 INSERT INTO TOPPINGS (
+T_ID,
 Name,
 Price,
 Cost per unit,
@@ -275,6 +300,7 @@ x-large
 )
 VALUES
 (
+13,
 'Regular Cheese',
 1.5,
 0.12,
@@ -286,6 +312,7 @@ VALUES
 );
 
 INSERT INTO TOPPINGS (
+T_ID,
 Name,
 Price,
 Cost per unit,
@@ -297,6 +324,7 @@ x-large
 )
 VALUES
 (
+14,
 'Four Cheese Blend',
 2,
 0.15,
@@ -308,6 +336,7 @@ VALUES
 );
 
 INSERT INTO TOPPINGS (
+T_ID,
 Name,
 Price,
 Cost per unit,
@@ -319,6 +348,7 @@ x-large
 )
 VALUES
 (
+15,
 'Feta Cheese',
 2,
 0.18,
@@ -330,6 +360,7 @@ VALUES
 );
 
 INSERT INTO TOPPINGS (
+T_ID,
 Name,
 Price,
 Cost per unit,
@@ -341,6 +372,7 @@ x-large
 )
 VALUES
 (
+16,
 'Goat Cheese',
 2,
 0.2,
@@ -352,6 +384,7 @@ VALUES
 );
 
 INSERT INTO TOPPINGS (
+T_ID,
 Name,
 Price,
 Cost per unit,
@@ -363,6 +396,7 @@ x-large
 )
 VALUES
 (
+17,
 'Bacon',
 1.5,
 0.25,

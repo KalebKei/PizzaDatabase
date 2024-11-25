@@ -6,6 +6,10 @@ CREATE TABLE TOPPINGS (
     Price FLOAT,
     Cost FLOAT,
     Inventory INTEGER
+    small FLOAT,
+    medium FLOAT,
+    large FLOAT
+    x-large FLOAT
 );
 
 CREATE TABLE PIZZA (
