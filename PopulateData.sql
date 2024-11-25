@@ -1029,7 +1029,7 @@ INSERT INTO PIZZA (
 VALUES
 (
     3,
-    3,
+    10,
     "Done",
     "2024-03-03 12:05:00",
     "Original",
@@ -1148,7 +1148,7 @@ INSERT INTO PIZZA (
 VALUES
 (
     4,
-    4,
+    10,
     "Done",
     "2024-03-03 21:30:00",
     "Original",
@@ -1229,7 +1229,7 @@ INSERT INTO PIZZA (
 VALUES
 (
     5,
-    4,
+    10,
     "Done",
     "2024-03-03 21:30:00",
     "Original",
@@ -1311,7 +1311,7 @@ INSERT INTO PIZZA (
 VALUES
 (
     6,
-    4,
+    10,
     "Done",
     "2024-03-03 21:30:00",
     "Original",
@@ -1391,7 +1391,7 @@ INSERT INTO PIZZA (
 VALUES
 (
     7,
-    4,
+    10,
     "Done",
     "2024-03-03 21:30:00",
     "Original",
@@ -1472,7 +1472,7 @@ INSERT INTO PIZZA (
 VALUES
 (
     8,
-    4,
+    10,
     "Done",
     "2024-03-03 21:30:00",
     "Original",
@@ -1553,7 +1553,7 @@ INSERT INTO PIZZA (
 VALUES
 (
     9,
-    4,
+    10,
     "Done",
     "2024-03-03 21:30:00",
     "Original",
@@ -1649,7 +1649,7 @@ INSERT INTO PIZZA (
 VALUES
 (
     9,
-    5,
+    14,
     "Done",
     "2024-03-03 12:05:00",
     "Pan crust",
@@ -1823,7 +1823,7 @@ INSERT INTO PIZZA (
 VALUES
 (
     11,
-    6,
+    14,
     "Done",
     "2024-03-03 12:05:00",
     "Pan crust",
