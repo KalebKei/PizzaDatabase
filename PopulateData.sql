@@ -3,12 +3,12 @@ INSERT INTO TOPPINGS (
 T_ID,
 Name,
 Price,
-Cost per unit,
+Cost,
 Inventory,
 small,
 medium,
 large,
-x-large
+xlarge
 )
 VALUES
 (
@@ -27,12 +27,12 @@ INSERT INTO TOPPINGS (
 T_ID,
 Name,
 Price,
-Cost per unit,
+Cost,
 Inventory,
 small,
 medium,
 large,
-x-large
+xlarge
 )
 VALUES
 (
@@ -51,12 +51,12 @@ INSERT INTO TOPPINGS (
 T_ID,
 Name,
 Price,
-Cost per unit,
+Cost,
 Inventory,
 small,
 medium,
 large,
-x-large
+xlarge
 )
 VALUES
 (
@@ -75,12 +75,12 @@ INSERT INTO TOPPINGS (
 T_ID,
 Name,
 Price,
-Cost per unit,
+Cost,
 Inventory,
 small,
 medium,
 large,
-x-large
+xlarge
 )
 VALUES
 (
@@ -99,12 +99,12 @@ INSERT INTO TOPPINGS (
 T_ID,
 Name,
 Price,
-Cost per unit,
+Cost,
 Inventory,
 small,
 medium,
 large,
-x-large
+xlarge
 )
 VALUES
 (
@@ -123,12 +123,12 @@ INSERT INTO TOPPINGS (
 T_ID,
 Name,
 Price,
-Cost per unit,
+Cost,
 Inventory,
 small,
 medium,
 large,
-x-large
+xlarge
 )
 VALUES
 (
@@ -147,12 +147,12 @@ INSERT INTO TOPPINGS (
 T_ID,
 Name,
 Price,
-Cost per unit,
+Cost,
 Inventory,
 small,
 medium,
 large,
-x-large
+xlarge
 )
 VALUES
 (
@@ -171,12 +171,12 @@ INSERT INTO TOPPINGS (
 T_ID,
 Name,
 Price,
-Cost per unit,
+Cost,
 Inventory,
 small,
 medium,
 large,
-x-large
+xlarge
 )
 VALUES
 (
@@ -195,12 +195,12 @@ INSERT INTO TOPPINGS (
 T_ID,
 Name,
 Price,
-Cost per unit,
+Cost,
 Inventory,
 small,
 medium,
 large,
-x-large
+xlarge
 )
 VALUES
 (
@@ -219,12 +219,12 @@ INSERT INTO TOPPINGS (
 T_ID,
 Name,
 Price,
-Cost per unit,
+Cost,
 Inventory,
 small,
 medium,
 large,
-x-large
+xlarge
 )
 VALUES
 (
@@ -243,12 +243,12 @@ INSERT INTO TOPPINGS (
 T_ID,
 Name,
 Price,
-Cost per unit,
+Cost,
 Inventory,
 small,
 medium,
 large,
-x-large
+xlarge
 )
 VALUES
 (
@@ -267,12 +267,12 @@ INSERT INTO TOPPINGS (
 T_ID,
 Name,
 Price,
-Cost per unit,
+Cost,
 Inventory,
 small,
 medium,
 large,
-x-large
+xlarge
 )
 VALUES
 (
@@ -291,12 +291,12 @@ INSERT INTO TOPPINGS (
 T_ID,
 Name,
 Price,
-Cost per unit,
+Cost,
 Inventory,
 small,
 medium,
 large,
-x-large
+xlarge
 )
 VALUES
 (
@@ -315,12 +315,12 @@ INSERT INTO TOPPINGS (
 T_ID,
 Name,
 Price,
-Cost per unit,
+Cost,
 Inventory,
 small,
 medium,
 large,
-x-large
+xlarge
 )
 VALUES
 (
@@ -339,12 +339,12 @@ INSERT INTO TOPPINGS (
 T_ID,
 Name,
 Price,
-Cost per unit,
+Cost,
 Inventory,
 small,
 medium,
 large,
-x-large
+xlarge
 )
 VALUES
 (
@@ -363,12 +363,12 @@ INSERT INTO TOPPINGS (
 T_ID,
 Name,
 Price,
-Cost per unit,
+Cost,
 Inventory,
 small,
 medium,
 large,
-x-large
+xlarge
 )
 VALUES
 (
@@ -387,12 +387,12 @@ INSERT INTO TOPPINGS (
 T_ID,
 Name,
 Price,
-Cost per unit,
+Cost,
 Inventory,
 small,
 medium,
 large,
-x-large
+xlarge
 )
 VALUES
 (
