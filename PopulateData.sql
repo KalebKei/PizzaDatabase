@@ -2157,7 +2157,7 @@ VALUES
 INSERT INTO CUSTOMER (
     C_ID,
     Name,
-    Phone_Number,
+    Phone_Number
 )
 VALUES
 (
@@ -2168,7 +2168,7 @@ VALUES
 
 INSERT INTO DELIVERY (
     Cust_ID,
-    Address,
+    Address
 )
 VALUES
 (
@@ -2176,6 +2176,15 @@ VALUES
     "8879 Suburban Home, Athens OH 45701"
 );
 
+INSERT INTO BP_ORDER (
+    BPO_ID,
+    BP_ID
+)
+VALUES
+(
+    100,
+    9
+);
 
 -- YYYY-MM-DD HH:MI:SS (time example) --
 INSERT INTO PIZZA (
@@ -2187,12 +2196,12 @@ INSERT INTO PIZZA (
     Pizza_Price,
     Pizza_Discount
 )
-INSERT
+VALUES
 (
     14,
-    x, -- Caden fix me!!!!!!!!!!!!!!!!!!!!!!!!!!
+    100,
     "Done",
-    2024-03-03 12:05:00,
+    "2024-03-03 12:05:00",
     "Thin crust",
     12.00,
     NULL
