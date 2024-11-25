@@ -797,7 +797,7 @@ VALUES
 
 -- END ORDER 1 --
 
--- START ORDER 2 --
+-- START ORDER(s) 2 --
 INSERT INTO ORDERS (
     O_ID,
     Cust_ID,
@@ -834,7 +834,7 @@ INSERT
     2024-03-03 12:05:00,
     "Pan crust",
     13.5,
-    3 -- Large lunch --
+    3 -- Medium lunch --
 );
 
 INSERT INTO BASE_PRICE (
@@ -942,3 +942,126 @@ VALUES
     4,
     "1" -- Why are you do this to us --
 );
+
+-- At the same table at seat 2 there was a separate order at the same time for a small original crust pizza with regular cheese, chicken
+-- and banana peppers (P: 6.75, C: 1.40)
+
+INSERT INTO ORDERS (
+    O_ID,
+    Cust_ID,
+    Pizza_ID,
+    Order_State,
+    C_Price as Price,
+    B_Price as Cost
+)
+VALUES
+(
+    3,
+    3,
+    3,
+    "Done",
+    6.75,
+    1.40
+);
+
+-- YYYY-MM-DD HH:MI:SS (time example) --
+INSERT INTO PIZZA (
+    P_ID,
+    Bprice_ID,
+    Order_State,
+    Order_Date,
+    Crust_Type,
+    Pizza_Price,
+    Pizza_Discount,
+)
+INSERT
+(
+    3,
+    3,
+    "Done",
+    2024-03-03 12:05:00,
+    "Original",
+    6.75,
+    NULL
+);
+
+INSERT INTO BASE_PRICE (
+    BP_ID,
+    Price,
+    Size,
+    Crust,
+    Cost,
+)
+VALUES
+(
+    3, -- Same as PID --
+    6.75
+    "Small",
+    "Original",
+    1.40
+);
+
+INSERT INTO Pizza_Toppings ( -- Regular Cheese
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    7,
+    3,
+    x, -- TODO give toppings topping id's and link
+    "Regular"
+);
+INSERT INTO Pizza_Toppings ( -- Chicken
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    8,
+    3,
+    x, -- TODO give toppings topping id's and link
+    "Regular"
+);
+INSERT INTO Pizza_Toppings ( -- Banana peppers
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    9,
+    3,
+    x, -- TODO give toppings topping id's and link
+    "Regular"
+);
+
+INSERT INTO CUSTOMER (
+    C_ID,
+    Name,
+    Phone_Number,
+)
+VALUES
+(
+    3,
+    NULL,
+    NULL
+);
+
+INSERT INTO DINE_IN (
+    Cust_ID,
+    Table_Number,
+    Seat_Number,
+)
+VALUES
+(
+    3,
+    4,
+    "2" -- Why are you do this to us --
+);
+
