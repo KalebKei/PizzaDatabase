@@ -1539,6 +1539,7 @@ VALUES
 
 -- End pizza 5
 
+
 -- YYYY-MM-DD HH:MI:SS (time example) --
 INSERT INTO PIZZA (
     P_ID,
@@ -1643,33 +1644,27 @@ INSERT INTO PIZZA (
     Order_Date,
     Crust_Type,
     Pizza_Price,
-    Pizza_Discount,
+    Pizza_Discount
 )
-INSERT
+VALUES
 (
     9,
     5,
     "Done",
-    2024-03-03 12:05:00,
+    "2024-03-03 12:05:00",
     "Pan crust",
     14.5,
     5 -- Gameday special --
 );
 
-INSERT INTO BASE_PRICE (
-    BP_ID,
-    Price,
-    Size,
-    Crust,
-    Cost,
+INSERT INTO BP_ORDER (
+    BPO_ID,
+    BP_ID
 )
 VALUES
 (
-    9, -- Same as PID --
-    14.5,
-    "X-Large",
-    "Original",
-    5.59
+    10,
+    14
 );
 
 INSERT INTO Pizza_Toppings ( -- Four Cheese
@@ -1680,9 +1675,9 @@ INSERT INTO Pizza_Toppings ( -- Four Cheese
 )
 VALUES
 (
-    22,
+    24,
     9,
-    x, -- TODO give toppings topping id's and link
+    14, -- TODO give toppings topping id's and link
     "Regular"
 );
 INSERT INTO Pizza_Toppings ( -- Pepproni
@@ -1693,9 +1688,9 @@ INSERT INTO Pizza_Toppings ( -- Pepproni
 )
 VALUES
 (
-    23,
+    25,
     9,
-    x, -- TODO give toppings topping id's and link
+    1, -- TODO give toppings topping id's and link
     "Regular"
 );
 INSERT INTO Pizza_Toppings ( -- Sausage
@@ -1706,9 +1701,9 @@ INSERT INTO Pizza_Toppings ( -- Sausage
 )
 VALUES
 (
-    24,
+    26,
     9,
-    x, -- TODO give toppings topping id's and link
+    2, -- TODO give toppings topping id's and link
     "Regular"
 );
 
@@ -1732,23 +1727,6 @@ VALUES
 
 -- End pizza 1
 
-INSERT INTO ORDERS (
-    O_ID,
-    Cust_ID,
-    Pizza_ID,
-    Order_State,
-    C_Price,
-    B_Price
-)
-VALUES
-(
-    10,
-    4,
-    10,
-    "Done",
-    17.00,
-    5.59
-);
 
 -- YYYY-MM-DD HH:MI:SS (time example) --
 INSERT INTO PIZZA (
@@ -1758,34 +1736,19 @@ INSERT INTO PIZZA (
     Order_Date,
     Crust_Type,
     Pizza_Price,
-    Pizza_Discount,
+    Pizza_Discount
 )
-INSERT
+VALUES
 (
     10,
     6,
     "Done",
-    2024-03-03 12:05:00,
+    "2024-03-03 12:05:00",
     "Pan crust",
     17.00,
-    5 -- Gameday special --
+    NULL -- Gameday special --
 );
 
-INSERT INTO BASE_PRICE (
-    BP_ID,
-    Price,
-    Size,
-    Crust,
-    Cost,
-)
-VALUES
-(
-    10, -- Same as PID --
-    17.00,
-    "X-Large",
-    "Original",
-    5.59
-);
 
 INSERT INTO Pizza_Toppings ( -- Four Cheese
     PizzaToppingID,
@@ -1795,9 +1758,9 @@ INSERT INTO Pizza_Toppings ( -- Four Cheese
 )
 VALUES
 (
-    25,
+    27,
     10,
-    x, -- TODO give toppings topping id's and link
+    14, -- TODO give toppings topping id's and link
     "Regular"
 );
 INSERT INTO Pizza_Toppings ( -- Pineapple
@@ -1808,9 +1771,9 @@ INSERT INTO Pizza_Toppings ( -- Pineapple
 )
 VALUES
 (
-    26,
+    28,
     10,
-    x, -- TODO give toppings topping id's and link
+    3, -- TODO give toppings topping id's and link
     "Extra"
 );
 INSERT INTO Pizza_Toppings ( -- Ham
@@ -1821,12 +1784,102 @@ INSERT INTO Pizza_Toppings ( -- Ham
 )
 VALUES
 (
-    27,
+    29,
     10,
-    x, -- TODO give toppings topping id's and link
+    10, -- TODO give toppings topping id's and link
     "Extra"
 );
+
+INSERT INTO ORDERS (
+    O_ID,
+    Cust_ID,
+    Pizza_ID,
+    Order_State,
+    C_Price,
+    B_Price
+)
+VALUES
+(
+    10,
+    4,
+    10,
+    "Done",
+    17.00,
+    5.59
+);
 -- End pizza 2
+
+
+-- YYYY-MM-DD HH:MI:SS (time example) --
+INSERT INTO PIZZA (
+    P_ID,
+    Bprice_ID,
+    Order_State,
+    Order_Date,
+    Crust_Type,
+    Pizza_Price,
+    Pizza_Discount
+)
+VALUES
+(
+    11,
+    6,
+    "Done",
+    "2024-03-03 12:05:00",
+    "Pan crust",
+    14.00,
+    NULL -- Gameday special --
+);
+
+INSERT INTO BP_ORDER (
+    BPO_ID,
+    BP_ID
+)
+VALUES
+(
+    12,
+    14
+);
+
+INSERT INTO Pizza_Toppings ( -- Four Cheese
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    30,
+    11,
+    14, -- TODO give toppings topping id's and link
+    "Regular"
+);
+INSERT INTO Pizza_Toppings ( -- Jalapeno
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    31,
+    11,
+    11, -- TODO give toppings topping id's and link
+    "Regular"
+);
+INSERT INTO Pizza_Toppings ( -- Bacon
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    32,
+    11,
+    17, -- TODO give toppings topping id's and link
+    "Regular"
+);
 
 INSERT INTO ORDERS (
     O_ID,
@@ -1846,82 +1899,6 @@ VALUES
     5.68
 );
 
--- YYYY-MM-DD HH:MI:SS (time example) --
-INSERT INTO PIZZA (
-    P_ID,
-    Bprice_ID,
-    Order_State,
-    Order_Date,
-    Crust_Type,
-    Pizza_Price,
-    Pizza_Discount,
-)
-INSERT
-(
-    11,
-    6,
-    "Done",
-    2024-03-03 12:05:00,
-    "Pan crust",
-    14.00,
-    5 -- Gameday special --
-);
-
-INSERT INTO BASE_PRICE (
-    BP_ID,
-    Price,
-    Size,
-    Crust,
-    Cost,
-)
-VALUES
-(
-    11, -- Same as PID --
-    14.00,
-    "X-Large",
-    "Original",
-    5.68
-);
-
-INSERT INTO Pizza_Toppings ( -- Four Cheese
-    PizzaToppingID,
-    PizzaID,
-    ToppingID,
-    AmountUsed
-)
-VALUES
-(
-    28,
-    11,
-    x, -- TODO give toppings topping id's and link
-    "Regular"
-);
-INSERT INTO Pizza_Toppings ( -- Jalapeno
-    PizzaToppingID,
-    PizzaID,
-    ToppingID,
-    AmountUsed
-)
-VALUES
-(
-    29,
-    11,
-    x, -- TODO give toppings topping id's and link
-    "Regular"
-);
-INSERT INTO Pizza_Toppings ( -- Bacon
-    PizzaToppingID,
-    PizzaID,
-    ToppingID,
-    AmountUsed
-)
-VALUES
-(
-    30,
-    11,
-    x, -- TODO give toppings topping id's and link
-    "Regular"
-);
 -- End pizzas
 
 
@@ -1932,7 +1909,7 @@ VALUES
 INSERT INTO CUSTOMER (
     C_ID,
     Name,
-    Phone_Number,
+    Phone_Number
 )
 VALUES
 (
@@ -1942,7 +1919,7 @@ VALUES
 );
 
 INSERT INTO TAKEOUT (
-    Cust_ID,
+    Cust_ID
 )
 VALUES
 (
@@ -1957,14 +1934,14 @@ INSERT INTO PIZZA (
     Order_Date,
     Crust_Type,
     Pizza_Price,
-    Pizza_Discount,
+    Pizza_Discount
 )
-INSERT
+VALUES
 (
     12,
     6,
     "Done",
-    2024-03-03 12:05:00,
+    "2024-03-03 12:05:00",
     "Pan crust",
     16.85,
     4 -- Specialty pizza special --
