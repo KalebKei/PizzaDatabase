@@ -1879,23 +1879,24 @@ VALUES
 -- End Order(s) 4
 
 -- Begin Order 5
-
-INSERT INTO ORDERS (
-    O_ID,
-    Cust_ID,
-    Pizza_ID,
-    Order_State,
-    C_Price,
-    B_Price
+INSERT INTO CUSTOMER (
+    C_ID,
+    Name,
+    Phone_Number,
 )
 VALUES
 (
-    12,
     5,
-    12,
-    "Done",
-    16.85
-    7.85
+    "Matt Engers",
+    "740-474-9953"
+);
+
+INSERT INTO TAKEOUT (
+    Cust_ID,
+)
+VALUES
+(
+    5
 );
 
 -- YYYY-MM-DD HH:MI:SS (time example) --
@@ -1998,29 +1999,6 @@ VALUES
     "Regular"
 );
 
-INSERT INTO CUSTOMER (
-    C_ID,
-    Name,
-    Phone_Number,
-)
-VALUES
-(
-    5,
-    "Matt Engers",
-    "740-474-9953"
-);
-
-INSERT INTO TAKEOUT (
-    Cust_ID,
-)
-VALUES
-(
-    5
-);
-
--- End Order 5
-
--- Begin Order 6
 
 INSERT INTO ORDERS (
     O_ID,
@@ -2032,13 +2010,40 @@ INSERT INTO ORDERS (
 )
 VALUES
 (
-    13,
-    6,
-    13,
+    12,
+    5,
+    12,
     "Done",
-    13.25,
+    16.85
     7.85
 );
+
+-- End Order 5
+
+-- Begin Order 6
+
+INSERT INTO CUSTOMER (
+    C_ID,
+    Name,
+    Phone_Number,
+)
+VALUES
+(
+    6,
+    "Frank Turner",
+    "740-232-8944"
+);
+
+INSERT INTO DELIVERY (
+    Cust_ID,
+    Address,
+)
+VALUES
+(
+    6,
+    "6745 Wessex St Athens OH 45701"
+);
+
 
 -- YYYY-MM-DD HH:MI:SS (time example) --
 INSERT INTO PIZZA (
@@ -2127,6 +2132,28 @@ VALUES
     "Regular"
 );
 
+INSERT INTO ORDERS (
+    O_ID,
+    Cust_ID,
+    Pizza_ID,
+    Order_State,
+    C_Price,
+    B_Price
+)
+VALUES
+(
+    13,
+    6,
+    13,
+    "Done",
+    13.25,
+    7.85
+);
+
+-- End order 6
+
+-- Start order 7
+
 INSERT INTO CUSTOMER (
     C_ID,
     Name,
@@ -2134,9 +2161,9 @@ INSERT INTO CUSTOMER (
 )
 VALUES
 (
-    6,
-    "Frank Turner",
-    "740-232-8944"
+    7,
+    "Milo Auckerman",
+    "740-878-5679"
 );
 
 INSERT INTO DELIVERY (
@@ -2145,34 +2172,10 @@ INSERT INTO DELIVERY (
 )
 VALUES
 (
-    6,
-    "6745 Wessex St Athens OH 45701"
-);
-
-
--- End order 6
-
--- Start order 7
-
-INSERT INTO ORDERS (
-    O_ID,
-    Cust_ID,
-    Pizza_ID,
-    Order_State,
-    C_Price,
-    B_Price,
-    Order_Discount
-)
-VALUES
-(
-    14,
     7,
-    14,
-    "Done",
-    12.00,
-    3.75,
-    1
+    "8879 Suburban Home, Athens OH 45701"
 );
+
 
 -- YYYY-MM-DD HH:MI:SS (time example) --
 INSERT INTO PIZZA (
@@ -2209,25 +2212,6 @@ VALUES
     "Extra"
 );
 
-INSERT INTO ORDERS (
-    O_ID,
-    Cust_ID,
-    Pizza_ID,
-    Order_State,
-    C_Price,
-    B_Price,
-    Order_Discount
-)
-VALUES
-(
-    15,
-    7,
-    15,
-    "Done",
-    12.00,
-    3.75,
-    1
-);
 
 -- YYYY-MM-DD HH:MI:SS (time example) --
 INSERT INTO PIZZA (
@@ -2277,25 +2261,42 @@ VALUES
     x, -- TODO give toppings topping id's and link
     "Extra"
 );
-
-INSERT INTO CUSTOMER (
-    C_ID,
-    Name,
-    Phone_Number,
+INSERT INTO ORDERS (
+    O_ID,
+    Cust_ID,
+    Pizza_ID,
+    Order_State,
+    C_Price,
+    B_Price,
+    Order_Discount
 )
 VALUES
 (
+    14,
     7,
-    "Milo Auckerman",
-    "740-878-5679"
+    14,
+    "Done",
+    12.00,
+    3.75,
+    1
 );
 
-INSERT INTO DELIVERY (
+INSERT INTO ORDERS (
+    O_ID,
     Cust_ID,
-    Address,
+    Pizza_ID,
+    Order_State,
+    C_Price,
+    B_Price,
+    Order_Discount
 )
 VALUES
 (
+    15,
     7,
-    "8879 Suburban Home, Athens OH 45701"
+    15,
+    "Done",
+    12.00,
+    3.75,
+    1
 );
