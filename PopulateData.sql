@@ -1954,11 +1954,11 @@ VALUES
     12, -- Same as PID --
     16.85,
     "X-Large",
-    "Original",
+    "Gluten Free",
     7.85
 );
 
-INSERT INTO Pizza_Toppings ( -- Four Cheese
+INSERT INTO Pizza_Toppings ( -- Goat Cheese
     PizzaToppingID,
     PizzaID,
     ToppingID,
@@ -1966,12 +1966,12 @@ INSERT INTO Pizza_Toppings ( -- Four Cheese
 )
 VALUES
 (
-    25,
-    10,
+    31,
+    12,
     x, -- TODO give toppings topping id's and link
     "Regular"
 );
-INSERT INTO Pizza_Toppings ( -- Pineapple
+INSERT INTO Pizza_Toppings ( -- Green Pepper
     PizzaToppingID,
     PizzaID,
     ToppingID,
@@ -1979,12 +1979,12 @@ INSERT INTO Pizza_Toppings ( -- Pineapple
 )
 VALUES
 (
-    26,
-    10,
+    32,
+    12,
     x, -- TODO give toppings topping id's and link
-    "Extra"
+    "Regular"
 );
-INSERT INTO Pizza_Toppings ( -- Ham
+INSERT INTO Pizza_Toppings ( -- Onion
     PizzaToppingID,
     PizzaID,
     ToppingID,
@@ -1992,8 +1992,67 @@ INSERT INTO Pizza_Toppings ( -- Ham
 )
 VALUES
 (
-    27,
-    10,
+    33,
+    12,
     x, -- TODO give toppings topping id's and link
-    "Extra"
+    "Regular"
+);
+INSERT INTO Pizza_Toppings ( -- Roma Tomatoes
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    34,
+    12,
+    x, -- TODO give toppings topping id's and link
+    "Regular"
+);
+INSERT INTO Pizza_Toppings ( -- Mushrooms
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    35,
+    12,
+    x, -- TODO give toppings topping id's and link
+    "Regular"
+);
+INSERT INTO Pizza_Toppings ( -- Black olivess
+    PizzaToppingID,
+    PizzaID,
+    ToppingID,
+    AmountUsed
+)
+VALUES
+(
+    36,
+    12,
+    x, -- TODO give toppings topping id's and link
+    "Regular"
+);
+
+INSERT INTO CUSTOMER (
+    C_ID,
+    Name,
+    Phone_Number,
+)
+VALUES
+(
+    5,
+    "Matt Engers",
+    "740-474-9953"
+);
+
+INSERT INTO TAKEOUT (
+    Cust_ID,
+)
+VALUES
+(
+    5
 );
