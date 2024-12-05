@@ -2098,12 +2098,12 @@ INSERT INTO PIZZA (
     Pizza_Price,
     Pizza_Discount
 )
-INSERT
+VALUES
 (
     13,
     9,
     "Done",
-    2024-03-03 12:05:00,
+    "2024-03-03 12:05:00",
     "Thin crust",
     13.25,
     NULL
@@ -2284,14 +2284,14 @@ INSERT INTO PIZZA (
     Order_Date,
     Crust_Type,
     Pizza_Price,
-    Pizza_Discount,
+    Pizza_Discount
 )
-INSERT
+VALUES
 (
     15,
     9, -- Caden fix me!!!!!!!!!!!!!!!!!!!!!!!!!!
     "Done",
-    2024-03-03 12:05:00,
+    "2024-03-03 12:05:00",
     "Thin crust",
     12.00,
     NULL
