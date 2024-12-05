@@ -902,7 +902,7 @@ VALUES
     "2024-03-03 12:05:00",
     "Pan crust",
     13.5,
-    3 -- Medium lunch --
+    2 -- Medium lunch --
 );
 
 INSERT INTO Pizza_Toppings ( -- Feta Cheese
@@ -1751,7 +1751,7 @@ VALUES
     "2024-03-03 12:05:00",
     "Pan crust",
     17.00,
-    NULL -- Gameday special --
+    4
 );
 
 
