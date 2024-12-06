@@ -41,7 +41,6 @@ JOIN ORDERS ON ORDERS.Cust_ID = CUSTOMER.C_ID
 -- repeated data about the pizza (such as crust size, type) in order to display all the toppings in the
 -- table, however the information should be ordered by the pizzas so all the toppings for one pizza
 -- appear in consecutive rows
--- TODO fix
 SELECT PIZZA.P_ID as Pizza, PIZZA.Crust_Type as Crust, BASE_PRICE.Size, TOPPINGS.Name as Topping, Pizza_Toppings.AmountUsed
 FROM ORDERS
 JOIN DELIVERY ON DELIVERY.Cust_ID = ORDERS.Cust_ID
@@ -59,31 +58,29 @@ ORDER BY PIZZA.P_ID, TOPPINGS.Name
 -- the orders. Order by date, then order type.
 
 -- Multiple queries required because we don't have a variable saying type of order
--- TODO fix time sort
-SELECT PIZZA.Order_Date, COUNT(ORDERS.O_ID) as NumOrders, COUNT(ORDERS.Pizza_ID) as NumPizzas, SUM(ORDERS.C_Price) as TotalPrice
+SELECT PIZZA.Order_Date, COUNT(DISTINCT ORDERS.O_ID) as NumOrders, COUNT(DISTINCT ORDERS.Pizza_ID) as NumPizzas, SUM(ORDERS.C_Price) as TotalPrice
 FROM ORDERS
 JOIN PIZZA ON ORDERS.Pizza_ID = PIZZA.P_ID
 JOIN CUSTOMER ON ORDERS.Cust_ID = CUSTOMER.C_ID
-JOIN DINE_IN ON DINE_IN.Cust_ID = CUSTOMER.C_ID
-WHERE ORDERS.Cust_ID = DINE_IN.Cust_ID
+JOIN DINE_IN ON DINE_IN.Cust_ID = ORDERS.Cust_ID
+WHERE ORDERS.`Order_Type` = "DineIn"
 GROUP BY PIZZA.Order_Date
 ORDER BY PIZZA.Order_Date
 
-SELECT PIZZA.Order_Date, COUNT(ORDERS.O_ID) as NumOrders, COUNT(ORDERS.Pizza_ID) as NumPizzas, SUM(ORDERS.C_Price) as TotalPrice
-FROM ORDERS
+SELECT TAKEOUT.`Cust_ID`, PIZZA.Order_Date, COUNT(DISTINCT ORDERS.O_ID) as NumOrders, COUNT(DISTINCT ORDERS.Pizza_ID) as NumPizzas, SUM(ORDERS.C_Price) as TotalPrice
+FROM TAKEOUT
+JOIN ORDERS ON TAKEOUT.Cust_ID = ORDERS.Cust_ID
 JOIN PIZZA ON ORDERS.Pizza_ID = PIZZA.P_ID
-JOIN CUSTOMER ON ORDERS.Cust_ID = CUSTOMER.C_ID
-JOIN TAKEOUT ON TAKEOUT.Cust_ID = CUSTOMER.C_ID
-WHERE ORDERS.Cust_ID = TAKEOUT.Cust_ID
-GROUP BY PIZZA.Order_Date
+WHERE ORDERS.`Order_Type` = "Takeout"
+GROUP BY PIZZA.Order_Date, `TAKEOUT`.`Cust_ID`
 ORDER BY PIZZA.Order_Date
 
-SELECT PIZZA.Order_Date, COUNT(ORDERS.O_ID) as NumOrders, COUNT(ORDERS.Pizza_ID) as NumPizzas, SUM(ORDERS.C_Price) as TotalPrice
+SELECT PIZZA.Order_Date, COUNT(DISTINCT ORDERS.O_ID) as NumOrders, COUNT(DISTINCT ORDERS.Pizza_ID) as NumPizzas, SUM(ORDERS.C_Price) as TotalPrice
 FROM ORDERS
 JOIN PIZZA ON ORDERS.Pizza_ID = PIZZA.P_ID
 JOIN CUSTOMER ON ORDERS.Cust_ID = CUSTOMER.C_ID
-JOIN DELIVERY ON DELIVERY.Cust_ID = CUSTOMER.C_ID
-WHERE ORDERS.Cust_ID = DELIVERY.Cust_ID
+JOIN DELIVERY ON DELIVERY.Cust_ID = DELIVERY.`Cust_ID`
+WHERE ORDERS.`Order_Type` = "Delivery"
 GROUP BY PIZZA.Order_Date
 ORDER BY PIZZA.Order_Date
 
