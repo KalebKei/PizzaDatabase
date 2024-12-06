@@ -2,7 +2,7 @@
 
 CREATE TABLE TOPPINGS (
     T_ID INTEGER PRIMARY KEY,
-    Name TEXT,
+    Name VARCHAR(256),
     Price FLOAT,
     Cost FLOAT,
     Inventory INTEGER,
@@ -15,7 +15,7 @@ CREATE TABLE TOPPINGS (
 CREATE TABLE PIZZA (
     P_ID INTEGER PRIMARY KEY,
     Bprice_ID INTEGER,
-    Order_State TEXT,
+    Order_State VARCHAR(256),
     Order_Date DATETIME,
     Crust_Type VARCHAR(256),
     Pizza_Price FLOAT,
@@ -34,8 +34,8 @@ CREATE TABLE Pizza_Toppings (
 CREATE TABLE BASE_PRICE (
     BP_ID INTEGER PRIMARY KEY,
     Price FLOAT,
-    Size TEXT,
-    Crust TEXT,
+    Size VARCHAR(256),
+    Crust VARCHAR(256),
     Cost FLOAT
 );
 
@@ -49,8 +49,8 @@ CREATE TABLE BP_ORDER (
 
 CREATE TABLE CUSTOMER (
     C_ID INTEGER PRIMARY KEY,
-    Name TEXT,
-    Phone_Number TEXT
+    Name VARCHAR(256),
+    Phone_Number VARCHAR(256)
 );
 
 CREATE TABLE DINE_IN (
@@ -62,7 +62,7 @@ CREATE TABLE DINE_IN (
 
 CREATE TABLE DELIVERY (
     Cust_ID INTEGER,
-    Address TEXT,
+    Address VARCHAR(256),
     FOREIGN KEY (Cust_ID) REFERENCES CUSTOMER(C_ID)
 );
 
@@ -75,21 +75,21 @@ CREATE TABLE DISCOUNT_O (
     Dis_ID INTEGER PRIMARY KEY,
     Percent_Off FLOAT,
     Dollar_Off FLOAT,
-    Discount_Type TEXT
+    Discount_Type VARCHAR(256)
 );
 
 CREATE TABLE DISCOUNT_P (
     Dis_ID INTEGER PRIMARY KEY,
     Percent_Off FLOAT,
     Dollar_Off FLOAT,
-    Discount_Type TEXT
+    Discount_Type VARCHAR(256)
 );
 
 CREATE TABLE ORDERS (
     O_ID INTEGER PRIMARY KEY,
     Cust_ID INTEGER,
     Pizza_ID INTEGER,
-    Order_State TEXT,
+    Order_State VARCHAR(256),
     C_Price FLOAT,
     B_Price FLOAT,
     Order_Discount INTEGER,

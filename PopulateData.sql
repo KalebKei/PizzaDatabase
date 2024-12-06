@@ -1272,5 +1272,5 @@ INSERT INTO ORDERS (
 )
 VALUES
 (
-    15,    7,    15,    "Done",    12.00,    3.75,    1, "Delivery"
+    15,    7,    15,    "Done",    12.00,    2.55,    1, "Delivery"
 );

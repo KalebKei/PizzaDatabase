@@ -2,19 +2,19 @@
 -- Inventory report: For each topping in the database, show the topping name, the current
 -- inventory level and the number of X-large pizzas that could be made using that amount of the
 -- topping. Order alphabetically by topping name
-Select TOPPINGS.Name, TOPPINGS.Inventory, (TOPPINGS.Inventory / TOPPINGS.xlarge) as AmountOfLarge
+Select TOPPINGS.Name, TOPPINGS.Inventory, FLOOR(TOPPINGS.Inventory / TOPPINGS.xlarge) as AmountOfLarge
 From TOPPINGS
-Order by TOPPINGS.Name desc
+Order by TOPPINGS.Name;
 
 -- 2
 -- Revenue report: For each day, display the total revenue (the total of all the order prices for the
 -- day), the total expenses (total of all order costs of the day), and the total profit (revenue minus
 -- expenses). Order by the date.
-Select PIZZA.Order_Date, SUM(ORDERS.B_Price) as Expenses, SUM(ORDERS.C_Price) as Revenue, (SUM(ORDERS.C_Price) - SUM(ORDERS.B_Price)) as Profit
+Select DATE(PIZZA.Order_Date), ROUND(SUM(ORDERS.B_Price), 2) as Expenses, ROUND(SUM(ORDERS.C_Price),2) as Revenue, ROUND((SUM(ORDERS.C_Price) - SUM(ORDERS.B_Price)),2) as Profit
 FROM ORDERS
 JOIN PIZZA ON ORDERS.Pizza_ID = PIZZA.P_ID
-GROUP BY PIZZA.Order_Date
-ORDER BY PIZZA.Order_Date
+GROUP BY DATE(PIZZA.Order_Date)
+ORDER BY DATE(PIZZA.Order_Date);
 
 -- 3
 -- Customer report: For each customer in the database, display their name, the total number of
