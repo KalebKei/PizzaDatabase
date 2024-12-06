@@ -125,8 +125,9 @@ GROUP BY BP.Size
 -- Crust type report: For each crust type, show the total number of pizzas ordered, average price, and average cost of those pizzas.
 SELECT P.Crust_Type, COUNT(P.P_ID) as NumPizzas, AVG(P.Pizza_Price) as AvgPrice, AVG(BP.Cost) as AvgCost
 FROM PIZZA P
-LEFT JOIN BASE_PRICE BP ON P.Bprice_ID = BP.BP_ID
-GROUP BY P.Crust_Type, BP.Size
+INNER JOIN BASE_PRICE BP ON P.Bprice_ID = BP.BP_ID
+GROUP BY P.Crust_Type
 
 
-
+SELECT P.Crust_Type
+FROM PIZZA P

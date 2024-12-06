@@ -855,7 +855,7 @@ INSERT INTO PIZZA (
 )
 VALUES
 (
-    100,    14,    "Done",    "2024-03-05 19:11:00",    "Pan crust",    14.5,    NULL -- Gameday special --
+    100,    14,    "Done",    "2024-03-05 19:11:00",    "Original",    14.5,    NULL -- Gameday special --
 );
 
 INSERT INTO BP_ORDER (
@@ -909,7 +909,7 @@ INSERT INTO PIZZA (
 )
 VALUES
 (
-    10,    6,    "Done",    "2024-03-05 19:11:00",    "Pan crust",    17.00,    4
+    10,    6,    "Done",    "2024-03-05 19:11:00",    "Original",    17.00,    4
 );
 
 
@@ -954,7 +954,7 @@ INSERT INTO PIZZA (
 )
 VALUES
 (
-    11,    14,    "Done",    "2024-03-05 19:11:00",    "Pan crust",    14.00,    NULL -- Gameday special --
+    11,    14,    "Done",    "2024-03-05 19:11:00",    "Original",    14.00,    NULL -- Gameday special --
 );
 
 INSERT INTO BP_ORDER (
@@ -1027,7 +1027,7 @@ INSERT INTO PIZZA (
 )
 VALUES
 (
-    12,    16,    "Done",    "2024-03-02 17:30:00",    "Pan crust",    16.85,    4 -- Specialty pizza special --
+    12,    16,    "Done",    "2024-03-02 17:30:00", "Gluten Free",    16.85,    4 -- Specialty pizza special --
 );
 
 

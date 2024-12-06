@@ -17,7 +17,7 @@ CREATE TABLE PIZZA (
     Bprice_ID INTEGER,
     Order_State TEXT,
     Order_Date DATETIME,
-    Crust_Type TEXT,
+    Crust_Type VARCHAR(256),
     Pizza_Price FLOAT,
     Pizza_Discount INTEGER
 );
