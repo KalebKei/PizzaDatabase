@@ -26,17 +26,6 @@ LEFT JOIN ORDERS ON CUSTOMER.C_ID = ORDERS.Cust_ID
 WHERE CUSTOMER.C_ID NOT IN (SELECT Cust_ID FROM DINE_IN)
 GROUP BY CUSTOMER.Name
 
-
--- 4
--- Dine in order report: For all dine in orders, show the average count of customers/seats per order, the average order price, 
--- the total order price, the max order price and the minimum order price
-SELECT AVG(DINE_IN.Seats) as AvgSeats, AVG(ORDERS.C_Price) as AvgOrderPrice, SUM(ORDERS.C_Price) as TotalOrderPrice, MAX(ORDERS.C_Price) as MaxOrderPrice, MIN(ORDERS.C_Price) as MinOrderPrice
-FROM DINE_IN
-JOIN CUSTOMER ON DINE_IN.Cust_ID = CUSTOMER.C_ID
-JOIN ORDERS ON ORDERS.Cust_ID = CUSTOMER.C_ID
-
-
-
 -- 5
 -- Order ticket: On March 5th at 7:11 pm, Andrew Wilkes-Krier placed an order. The kitchen staff
 -- needs to know what to prepare for the order. For each pizza on the order, display the crust, size,
@@ -45,10 +34,10 @@ JOIN ORDERS ON ORDERS.Cust_ID = CUSTOMER.C_ID
 -- table, however the information should be ordered by the pizzas so all the toppings for one pizza
 -- appear in consecutive rows
 -- TODO fix
-SELECT PIZZA.Crust_Type as Crust, BASE_PRICE.Size, TOPPINGS.Name as Topping
+SELECT PIZZA.P_ID as Pizza, PIZZA.Crust_Type as Crust, BASE_PRICE.Size, TOPPINGS.Name as Topping, Pizza_Toppings.AmountUsed
 FROM ORDERS
-JOIN CUSTOMER ON ORDERS.Cust_ID = CUSTOMER.C_ID
 JOIN DELIVERY ON DELIVERY.Cust_ID = ORDERS.Cust_ID
+JOIN CUSTOMER ON ORDERS.Cust_ID = CUSTOMER.C_ID
 JOIN PIZZA ON ORDERS.Pizza_ID = PIZZA.P_ID
 JOIN BASE_PRICE ON PIZZA.Bprice_ID = BASE_PRICE.BP_ID
 JOIN Pizza_Toppings ON PIZZA.P_ID = Pizza_Toppings.PizzaID
