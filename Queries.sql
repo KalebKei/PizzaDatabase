@@ -26,6 +26,14 @@ LEFT JOIN ORDERS ON CUSTOMER.C_ID = ORDERS.Cust_ID
 WHERE CUSTOMER.C_ID NOT IN (SELECT Cust_ID FROM DINE_IN)
 GROUP BY CUSTOMER.Name
 
+-- 4
+-- Dine in order report: For all dine in orders, show the average count of customers/seats per order, the average order price, 
+-- the total order price, the max order price and the minimum order price
+SELECT AVG(DINE_IN.Seats) as AvgSeats, AVG(ORDERS.C_Price) as AvgOrderPrice, SUM(ORDERS.C_Price) as TotalOrderPrice, MAX(ORDERS.C_Price) as MaxOrderPrice, MIN(ORDERS.C_Price) as MinOrderPrice
+FROM DINE_IN
+JOIN CUSTOMER ON DINE_IN.Cust_ID = CUSTOMER.C_ID
+JOIN ORDERS ON ORDERS.Cust_ID = CUSTOMER.C_ID
+
 -- 5
 -- Order ticket: On March 5th at 7:11 pm, Andrew Wilkes-Krier placed an order. The kitchen staff
 -- needs to know what to prepare for the order. For each pizza on the order, display the crust, size,
