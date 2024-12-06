@@ -20,7 +20,7 @@ ORDER BY DATE(PIZZA.Order_Date);
 -- Customer report: For each customer in the database, display their name, the total number of
 -- orders they have placed, the average of the order price, the total order price, the max order
 -- price, and the minimum order price. Dine in orders should not be included.
-SELECT CUSTOMER.Name, COUNT(ORDERS.O_ID) as NumOrders, AVG(ORDERS.C_Price) as AveragePrice, SUM(ORDERS.C_Price) as TotalOrderPrice, MAX(ORDERS.C_Price) as MaxOrderPrice, MIN(ORDERS.C_Price) as MinOrderPrice
+SELECT CUSTOMER.Name, COUNT(ORDERS.O_ID) as NumOrders, ROUND(AVG(ORDERS.C_Price),2) as AveragePrice, ROUND(SUM(ORDERS.C_Price),2) as TotalOrderPrice, MAX(ORDERS.C_Price) as MaxOrderPrice, MIN(ORDERS.C_Price) as MinOrderPrice
 FROM CUSTOMER
 LEFT JOIN ORDERS ON CUSTOMER.C_ID = ORDERS.Cust_ID
 WHERE CUSTOMER.C_ID NOT IN (SELECT Cust_ID FROM DINE_IN)
@@ -29,7 +29,7 @@ GROUP BY CUSTOMER.Name
 -- 4
 -- Dine in order report: For all dine in orders, show the average count of customers/seats per order, the average order price, 
 -- the total order price, the max order price and the minimum order price
-SELECT AVG(DINE_IN.Seats) as AvgSeats, AVG(ORDERS.C_Price) as AvgOrderPrice, SUM(ORDERS.C_Price) as TotalOrderPrice, MAX(ORDERS.C_Price) as MaxOrderPrice, MIN(ORDERS.C_Price) as MinOrderPrice
+SELECT ROUND(AVG(DINE_IN.Seats),2) as AvgSeats, ROUND(AVG(ORDERS.C_Price),2) as AvgOrderPrice, ROUND(SUM(ORDERS.C_Price),2) as TotalOrderPrice, MAX(ORDERS.C_Price) as MaxOrderPrice, MIN(ORDERS.C_Price) as MinOrderPrice
 FROM DINE_IN
 JOIN CUSTOMER ON DINE_IN.Cust_ID = CUSTOMER.C_ID
 JOIN ORDERS ON ORDERS.Cust_ID = CUSTOMER.C_ID
@@ -58,7 +58,7 @@ ORDER BY PIZZA.P_ID, TOPPINGS.Name
 -- the orders. Order by date, then order type.
 
 -- Multiple queries required because we don't have a variable saying type of order
-SELECT PIZZA.Order_Date, COUNT(DISTINCT ORDERS.O_ID) as NumOrders, COUNT(DISTINCT ORDERS.Pizza_ID) as NumPizzas, SUM(ORDERS.C_Price) as TotalPrice
+SELECT PIZZA.Order_Date, COUNT(DISTINCT ORDERS.O_ID) as NumOrders, COUNT(DISTINCT ORDERS.Pizza_ID) as NumPizzas, ROUND(SUM(ORDERS.C_Price),2) as TotalPrice
 FROM ORDERS
 JOIN PIZZA ON ORDERS.Pizza_ID = PIZZA.P_ID
 JOIN CUSTOMER ON ORDERS.Cust_ID = CUSTOMER.C_ID
@@ -67,7 +67,7 @@ WHERE ORDERS.`Order_Type` = "DineIn"
 GROUP BY PIZZA.Order_Date
 ORDER BY PIZZA.Order_Date
 
-SELECT TAKEOUT.`Cust_ID`, PIZZA.Order_Date, COUNT(DISTINCT ORDERS.O_ID) as NumOrders, COUNT(DISTINCT ORDERS.Pizza_ID) as NumPizzas, SUM(ORDERS.C_Price) as TotalPrice
+SELECT TAKEOUT.`Cust_ID`, PIZZA.Order_Date, COUNT(DISTINCT ORDERS.O_ID) as NumOrders, COUNT(DISTINCT ORDERS.Pizza_ID) as NumPizzas, ROUND(SUM(ORDERS.C_Price),2) as TotalPrice
 FROM TAKEOUT
 JOIN ORDERS ON TAKEOUT.Cust_ID = ORDERS.Cust_ID
 JOIN PIZZA ON ORDERS.Pizza_ID = PIZZA.P_ID
@@ -88,12 +88,12 @@ ORDER BY PIZZA.Order_Date
 -- 7
 -- Discount report: For each discount, display the discount name and the count of orders that used
 -- that discount, and the total money saved by customers from using that discount
-SELECT `DISCOUNT_O`.`Dis_ID`, COUNT(ORDERS.`Order_Discount`) as NumUsed, SUM(ORDERS.`C_Price` * DISCOUNT_O.`Percent_Off`) as CustomerMoneySaves
+SELECT `DISCOUNT_O`.`Discount_Type`, COUNT(ORDERS.`Order_Discount`) as NumUsed, ROUND(SUM(ORDERS.`C_Price` * DISCOUNT_O.`Percent_Off`),2) as CustomerMoneySaves
 FROM `DISCOUNT_O`
 LEFT JOIN ORDERS ON ORDERS.`Order_Discount` = `DISCOUNT_O`.`Dis_ID`
 GROUP BY `DISCOUNT_O`.`Dis_ID`
 
-SELECT `DISCOUNT_P`.`Dis_ID`, COUNT(PIZZA.`P_ID`) as NumUsed, SUM(PIZZA.`Pizza_Price` - DISCOUNT_P.`Dollar_Off`) as CustomerMoneySaves
+SELECT `DISCOUNT_P`.`Discount_Type`, COUNT(PIZZA.`P_ID`) as NumUsed, ROUND(SUM(PIZZA.`Pizza_Price` - DISCOUNT_P.`Dollar_Off`),2) as CustomerMoneySaves
 FROM `DISCOUNT_P`
 LEFT JOIN PIZZA ON  PIZZA.`Pizza_Discount` = `DISCOUNT_P`.`Dis_ID`
 GROUP BY `DISCOUNT_P`.`Dis_ID`
@@ -110,11 +110,10 @@ LEFT JOIN PIZZA P ON PT.PizzaID = P.P_ID
 GROUP BY T.Name
 ORDER BY T.Name;
 
-
-
 -- 9
 -- Pizza Size report: For each Pizza size, show the total number of pizzas ordered, average price, and average cost of those pizzas.
-SELECT BP.Size, COUNT(P.P_ID) as NumPizzas, AVG(P.Pizza_Price) as AvgPrice, AVG(BP.Cost) as AvgCost
+-- TODO large listed instead of x-large
+SELECT BP.Size, COUNT(P.P_ID) as NumPizzas, ROUND(AVG(P.Pizza_Price),2) as AvgPrice, ROUND(AVG(BP.Cost),2) as AvgCost
 FROM PIZZA P
 JOIN BASE_PRICE BP ON P.Bprice_ID = BP.BP_ID
 GROUP BY BP.Size
