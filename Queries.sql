@@ -112,7 +112,6 @@ ORDER BY T.Name;
 
 -- 9
 -- Pizza Size report: For each Pizza size, show the total number of pizzas ordered, average price, and average cost of those pizzas.
--- TODO large listed instead of x-large
 SELECT BP.Size, COUNT(P.P_ID) as NumPizzas, ROUND(AVG(P.Pizza_Price),2) as AvgPrice, ROUND(AVG(BP.Cost),2) as AvgCost
 FROM PIZZA P
 JOIN BASE_PRICE BP ON P.Bprice_ID = BP.BP_ID
@@ -127,6 +126,3 @@ FROM PIZZA P
 INNER JOIN BASE_PRICE BP ON P.Bprice_ID = BP.BP_ID
 GROUP BY P.Crust_Type
 
-
-SELECT P.Crust_Type
-FROM PIZZA P

@@ -406,7 +406,7 @@ INSERT INTO PIZZA (
 )
 VALUES
 (
-    2,    2,    "Done",    "2024-03-03 12:05:00",    "Pan crust",    10.6,    2 -- Medium lunch --
+    2,    7,    "Done",    "2024-03-03 12:05:00",    "Pan crust",    10.6,    2 -- Medium lunch --
 );
 
 INSERT INTO Pizza_Toppings ( -- Feta Cheese
@@ -446,7 +446,7 @@ INSERT INTO Pizza_Toppings ( -- Banana peppers
 )
 VALUES
 (
-    8,    2,    11,-- TODO give toppings topping id's and link
+    8,    2,    12,-- TODO give toppings topping id's and link
     "Regular"
 );
 INSERT INTO ORDERS (
@@ -484,7 +484,7 @@ INSERT INTO PIZZA (
 )
 VALUES
 (
-    3,    10,    "Done",    "2024-03-03 12:05:00",    "Original",    6.75,    NULL
+    3,    2,    "Done",    "2024-03-03 12:05:00",    "Original",    6.75,    NULL
 );
 
 INSERT INTO BP_ORDER (
@@ -909,7 +909,7 @@ INSERT INTO PIZZA (
 )
 VALUES
 (
-    10,    6,    "Done",    "2024-03-05 19:11:00",    "Original",    17.00,    4
+    10,    14,    "Done",    "2024-03-05 19:11:00",    "Original",    17.00,    4
 );
 
 
