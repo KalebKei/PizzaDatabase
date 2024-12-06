@@ -92,3 +92,35 @@ FROM `DISCOUNT_P`
 LEFT JOIN PIZZA ON  PIZZA.`Pizza_Discount` = `DISCOUNT_P`.`Dis_ID`
 GROUP BY `DISCOUNT_P`.`Dis_ID`
 -- WE set it up that only 1 pizza discount per pizza. We are running a tight ship here we aren't a chain... (TODO)
+
+
+
+-- 8
+-- Inventory usage: For each topping, show the name and the total amount used (even if it is 0) on March 3rd. Order by Topping name.
+SELECT T.Name, SUM(CASE WHEN P.Order_Date LIKE '____-03-03%' THEN 1 ELSE 0 END) AS TotalAmountUsed
+FROM TOPPINGS T
+LEFT JOIN Pizza_Toppings PT ON T.T_ID = PT.ToppingID
+LEFT JOIN PIZZA P ON PT.PizzaID = P.P_ID
+GROUP BY T.Name
+ORDER BY T.Name;
+
+
+
+-- 9
+-- Pizza Size report: For each Pizza size, show the total number of pizzas ordered, average price, and average cost of those pizzas.
+SELECT BP.Size, COUNT(P.P_ID) as NumPizzas, AVG(P.Pizza_Price) as AvgPrice, AVG(BP.Cost) as AvgCost
+FROM PIZZA P
+JOIN BASE_PRICE BP ON P.Bprice_ID = BP.BP_ID
+GROUP BY BP.Size
+
+
+
+-- 10
+-- Crust type report: For each crust type, show the total number of pizzas ordered, average price, and average cost of those pizzas.
+SELECT P.Crust_Type, COUNT(P.P_ID) as NumPizzas, AVG(P.Pizza_Price) as AvgPrice, AVG(BP.Cost) as AvgCost
+FROM PIZZA P
+LEFT JOIN BASE_PRICE BP ON P.Bprice_ID = BP.BP_ID
+GROUP BY P.Crust_Type, BP.Size
+
+
+
